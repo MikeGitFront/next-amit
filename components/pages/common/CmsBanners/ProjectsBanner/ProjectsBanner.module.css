@@ -1,0 +1,95 @@
+.projects {
+  @apply flex gap-4 my-10 relative;
+}
+
+.mainDescription {
+  @apply my-2 px-0 text-[20px] font-normal text-center;
+}
+
+.descriptionWrapper {
+  @apply relative pt-6 mx-auto max-w-[900px];
+}
+
+.mainDescription::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%);
+  @apply w-[20%] border-primary border-t-2;
+}
+
+.projects::before {
+  content: '';
+  position: absolute;
+  transform: translate(-50%) translateY(50%);
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  background-size: cover;
+  @apply bg-bg-primary;
+}
+
+.blog {
+  @apply flex relative pb-10;
+}
+
+.blog::before {
+  content: '';
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  background-size: cover;
+  @apply bg-bg-primary;
+}
+
+.blog p {
+  margin-bottom: 0.3em;
+}
+
+.blogItem {
+  @apply flex flex-col items-center justify-between bg-[#fff] w-[25%] shadow-[0_0_40px_rgba(0,0,0,0.1)];
+}
+
+@media (min-width: 640px) {
+  .blogItem {
+    width: calc(50% - 2rem)
+  }
+}
+
+@media (min-width: 768px) {
+  .projects {
+    max-width: 75%;
+  }
+
+  .mainDescription {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .blog {
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects {
+    max-width: 100%;
+  }
+
+}
+
+@media (min-width: 1280px) {
+  .projects {
+    max-width: 80%;
+  }
+}

@@ -1,0 +1,24 @@
+.slider {
+  @apply flex;
+}
+
+.sliderItem {
+  @apply p-4 grid grid-cols-[auto_1fr] gap-x-4 grid-rows-[auto_1fr_auto_auto];
+}
+
+.initials {
+  @apply mt-6 font-bold relative;
+}
+
+.initials::before {
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  @apply border-primary border-t-[3px] w-20;
+}
+
+.imageWrapper {
+  grid-column: 1;
+  grid-row: 1/-1;
+}

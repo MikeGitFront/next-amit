@@ -40,6 +40,24 @@ export type BooleanFilterInput = {
   startsWith?: InputMaybe<Scalars['Boolean']>;
 };
 
+export type ComponentBlocksAboutBanner = {
+  __typename?: 'ComponentBlocksAboutBanner';
+  description?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  image?: Maybe<UploadFileEntityResponse>;
+  isReversed?: Maybe<Scalars['Boolean']>;
+  items?: Maybe<Array<Maybe<ComponentCommonItem>>>;
+  theme?: Maybe<Enum_Componentblocksaboutbanner_Theme>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type ComponentBlocksAboutBannerItemsArgs = {
+  filters?: InputMaybe<ComponentCommonItemFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
 export type ComponentBlocksBlogBanner = {
   __typename?: 'ComponentBlocksBlogBanner';
   id: Scalars['ID'];
@@ -53,11 +71,31 @@ export type ComponentBlocksBlogBannerItemsArgs = {
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
+export type ComponentBlocksFactsBanner = {
+  __typename?: 'ComponentBlocksFactsBanner';
+  id: Scalars['ID'];
+  items?: Maybe<Array<Maybe<ComponentFactsFactsItem>>>;
+};
+
+
+export type ComponentBlocksFactsBannerItemsArgs = {
+  filters?: InputMaybe<ComponentFactsFactsItemFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
 export type ComponentBlocksFeaturedBanner = {
   __typename?: 'ComponentBlocksFeaturedBanner';
   id: Scalars['ID'];
   link?: Maybe<ComponentCommonLink>;
   title?: Maybe<Scalars['String']>;
+};
+
+export type ComponentBlocksImageDescBanner = {
+  __typename?: 'ComponentBlocksImageDescBanner';
+  desc?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  image?: Maybe<UploadFileEntityResponse>;
 };
 
 export type ComponentBlocksInfoBanner = {
@@ -73,6 +111,21 @@ export type ComponentBlocksInfoBanner = {
 
 export type ComponentBlocksInfoBannerSecondaryImagesArgs = {
   filters?: InputMaybe<UploadFileFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ComponentBlocksModelsBanner = {
+  __typename?: 'ComponentBlocksModelsBanner';
+  description?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  items?: Maybe<Array<Maybe<ComponentCommonImgTitleBlock>>>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type ComponentBlocksModelsBannerItemsArgs = {
+  filters?: InputMaybe<ComponentCommonImgTitleBlockFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
@@ -107,6 +160,7 @@ export type ComponentBlocksPromoBanner = {
   button?: Maybe<ComponentCommonButton>;
   description?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
+  image?: Maybe<UploadFileEntityResponse>;
   title?: Maybe<Scalars['String']>;
 };
 
@@ -114,6 +168,7 @@ export type ComponentBlocksReviewsBanner = {
   __typename?: 'ComponentBlocksReviewsBanner';
   id: Scalars['ID'];
   reviews?: Maybe<Array<Maybe<ComponentReviewsBannerItem>>>;
+  title?: Maybe<Scalars['String']>;
 };
 
 
@@ -132,6 +187,20 @@ export type ComponentBlocksServicesBanner = {
 
 export type ComponentBlocksServicesBannerTabsArgs = {
   filters?: InputMaybe<ComponentTabsTabsFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ComponentBlocksShowOffBanner = {
+  __typename?: 'ComponentBlocksShowOffBanner';
+  id: Scalars['ID'];
+  items?: Maybe<Array<Maybe<ComponentCommonItem>>>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type ComponentBlocksShowOffBannerItemsArgs = {
+  filters?: InputMaybe<ComponentCommonItemFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
@@ -196,6 +265,53 @@ export type ComponentCommonButtonInput = {
   type?: InputMaybe<Enum_Componentcommonbutton_Type>;
 };
 
+export type ComponentCommonIcon = {
+  __typename?: 'ComponentCommonIcon';
+  href?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  image?: Maybe<UploadFileEntityResponse>;
+};
+
+export type ComponentCommonIconFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentCommonIconFiltersInput>>>;
+  href?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentCommonIconFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentCommonIconFiltersInput>>>;
+};
+
+export type ComponentCommonIconInput = {
+  href?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  image?: InputMaybe<Scalars['ID']>;
+};
+
+export type ComponentCommonImgTitleBlock = {
+  __typename?: 'ComponentCommonImgTitleBlock';
+  id: Scalars['ID'];
+  image?: Maybe<UploadFileEntityResponse>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type ComponentCommonImgTitleBlockFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentCommonImgTitleBlockFiltersInput>>>;
+  not?: InputMaybe<ComponentCommonImgTitleBlockFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentCommonImgTitleBlockFiltersInput>>>;
+  title?: InputMaybe<StringFilterInput>;
+};
+
+export type ComponentCommonItem = {
+  __typename?: 'ComponentCommonItem';
+  id: Scalars['ID'];
+  item?: Maybe<Scalars['String']>;
+};
+
+export type ComponentCommonItemFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentCommonItemFiltersInput>>>;
+  item?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentCommonItemFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentCommonItemFiltersInput>>>;
+};
+
 export type ComponentCommonLink = {
   __typename?: 'ComponentCommonLink';
   href?: Maybe<Scalars['String']>;
@@ -211,6 +327,30 @@ export type ComponentCommonLinkFiltersInput = {
   or?: InputMaybe<Array<InputMaybe<ComponentCommonLinkFiltersInput>>>;
 };
 
+export type ComponentCommonLinkInput = {
+  href?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  label?: InputMaybe<Scalars['String']>;
+};
+
+export type ComponentCommonTitleBlock = {
+  __typename?: 'ComponentCommonTitleBlock';
+  id: Scalars['ID'];
+  title?: Maybe<Scalars['String']>;
+};
+
+export type ComponentCommonTitleBlockFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentCommonTitleBlockFiltersInput>>>;
+  not?: InputMaybe<ComponentCommonTitleBlockFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentCommonTitleBlockFiltersInput>>>;
+  title?: InputMaybe<StringFilterInput>;
+};
+
+export type ComponentCommonTitleBlockInput = {
+  id?: InputMaybe<Scalars['ID']>;
+  title?: InputMaybe<Scalars['String']>;
+};
+
 export type ComponentDescriptionDescription = {
   __typename?: 'ComponentDescriptionDescription';
   description?: Maybe<Scalars['String']>;
@@ -222,6 +362,22 @@ export type ComponentDescriptionDescriptionFiltersInput = {
   description?: InputMaybe<StringFilterInput>;
   not?: InputMaybe<ComponentDescriptionDescriptionFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<ComponentDescriptionDescriptionFiltersInput>>>;
+};
+
+export type ComponentFactsFactsItem = {
+  __typename?: 'ComponentFactsFactsItem';
+  description?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  image?: Maybe<UploadFileEntityResponse>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type ComponentFactsFactsItemFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentFactsFactsItemFiltersInput>>>;
+  description?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentFactsFactsItemFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentFactsFactsItemFiltersInput>>>;
+  title?: InputMaybe<StringFilterInput>;
 };
 
 export type ComponentMenuItems = {
@@ -350,6 +506,11 @@ export type DateTimeFilterInput = {
   startsWith?: InputMaybe<Scalars['DateTime']>;
 };
 
+export enum Enum_Componentblocksaboutbanner_Theme {
+  Bright = 'bright',
+  Dark = 'dark'
+}
+
 export enum Enum_Componentcommonbutton_Type {
   Primary = 'primary',
   Secondary = 'secondary'
@@ -391,7 +552,49 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']>;
 };
 
-export type GenericMorph = ComponentBlocksBlogBanner | ComponentBlocksFeaturedBanner | ComponentBlocksInfoBanner | ComponentBlocksProjectsBanner | ComponentBlocksPromoBanner | ComponentBlocksReviewsBanner | ComponentBlocksServicesBanner | ComponentBlocksStartBanner | ComponentBlogItem | ComponentCommonButton | ComponentCommonLink | ComponentDescriptionDescription | ComponentMenuItems | ComponentProjectProject | ComponentReviewsBannerItem | ComponentServicesServicesContent | ComponentStartBannerItem | ComponentTabsTabs | I18NLocale | Page | TopMenu | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type Footer = {
+  __typename?: 'Footer';
+  copyright?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  icons?: Maybe<Array<Maybe<ComponentCommonIcon>>>;
+  link?: Maybe<Array<Maybe<ComponentCommonLink>>>;
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+
+export type FooterIconsArgs = {
+  filters?: InputMaybe<ComponentCommonIconFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+export type FooterLinkArgs = {
+  filters?: InputMaybe<ComponentCommonLinkFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type FooterEntity = {
+  __typename?: 'FooterEntity';
+  attributes?: Maybe<Footer>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+export type FooterEntityResponse = {
+  __typename?: 'FooterEntityResponse';
+  data?: Maybe<FooterEntity>;
+};
+
+export type FooterInput = {
+  copyright?: InputMaybe<Scalars['String']>;
+  icons?: InputMaybe<Array<InputMaybe<ComponentCommonIconInput>>>;
+  link?: InputMaybe<Array<InputMaybe<ComponentCommonLinkInput>>>;
+  publishedAt?: InputMaybe<Scalars['DateTime']>;
+};
+
+export type GenericMorph = ComponentBlocksAboutBanner | ComponentBlocksBlogBanner | ComponentBlocksFactsBanner | ComponentBlocksFeaturedBanner | ComponentBlocksImageDescBanner | ComponentBlocksInfoBanner | ComponentBlocksModelsBanner | ComponentBlocksProjectsBanner | ComponentBlocksPromoBanner | ComponentBlocksReviewsBanner | ComponentBlocksServicesBanner | ComponentBlocksShowOffBanner | ComponentBlocksStartBanner | ComponentBlogItem | ComponentCommonButton | ComponentCommonIcon | ComponentCommonImgTitleBlock | ComponentCommonItem | ComponentCommonLink | ComponentCommonTitleBlock | ComponentDescriptionDescription | ComponentFactsFactsItem | ComponentMenuItems | ComponentProjectProject | ComponentReviewsBannerItem | ComponentServicesServicesContent | ComponentStartBannerItem | ComponentTabsTabs | Footer | I18NLocale | Page | TopMenu | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type I18NLocale = {
   __typename?: 'I18NLocale';
@@ -512,6 +715,7 @@ export type Mutation = {
   createUsersPermissionsRole?: Maybe<UsersPermissionsCreateRolePayload>;
   /** Create a new user */
   createUsersPermissionsUser: UsersPermissionsUserEntityResponse;
+  deleteFooter?: Maybe<FooterEntityResponse>;
   deletePage?: Maybe<PageEntityResponse>;
   deleteTopMenu?: Maybe<TopMenuEntityResponse>;
   deleteUploadFile?: Maybe<UploadFileEntityResponse>;
@@ -532,6 +736,7 @@ export type Mutation = {
   /** Reset user password. Confirm with a code (resetToken from forgotPassword) */
   resetPassword?: Maybe<UsersPermissionsLoginPayload>;
   updateFileInfo: UploadFileEntityResponse;
+  updateFooter?: Maybe<FooterEntityResponse>;
   updatePage?: Maybe<PageEntityResponse>;
   updateTopMenu?: Maybe<TopMenuEntityResponse>;
   updateUploadFile?: Maybe<UploadFileEntityResponse>;
@@ -647,6 +852,11 @@ export type MutationUpdateFileInfoArgs = {
 };
 
 
+export type MutationUpdateFooterArgs = {
+  data: FooterInput;
+};
+
+
 export type MutationUpdatePageArgs = {
   data: PageInput;
   id: Scalars['ID'];
@@ -694,13 +904,14 @@ export type Page = {
   __typename?: 'Page';
   blocks?: Maybe<Array<Maybe<PageBlocksDynamicZone>>>;
   createdAt?: Maybe<Scalars['DateTime']>;
+  pageTitle?: Maybe<ComponentCommonTitleBlock>;
   path?: Maybe<Scalars['String']>;
   publishedAt?: Maybe<Scalars['DateTime']>;
   title?: Maybe<Scalars['String']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
 };
 
-export type PageBlocksDynamicZone = ComponentBlocksBlogBanner | ComponentBlocksFeaturedBanner | ComponentBlocksInfoBanner | ComponentBlocksProjectsBanner | ComponentBlocksPromoBanner | ComponentBlocksReviewsBanner | ComponentBlocksServicesBanner | ComponentBlocksStartBanner | Error;
+export type PageBlocksDynamicZone = ComponentBlocksAboutBanner | ComponentBlocksBlogBanner | ComponentBlocksFactsBanner | ComponentBlocksFeaturedBanner | ComponentBlocksImageDescBanner | ComponentBlocksInfoBanner | ComponentBlocksModelsBanner | ComponentBlocksProjectsBanner | ComponentBlocksPromoBanner | ComponentBlocksReviewsBanner | ComponentBlocksServicesBanner | ComponentBlocksShowOffBanner | ComponentBlocksStartBanner | ComponentCommonTitleBlock | Error;
 
 export type PageEntity = {
   __typename?: 'PageEntity';
@@ -725,6 +936,7 @@ export type PageFiltersInput = {
   id?: InputMaybe<IdFilterInput>;
   not?: InputMaybe<PageFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<PageFiltersInput>>>;
+  pageTitle?: InputMaybe<ComponentCommonTitleBlockFiltersInput>;
   path?: InputMaybe<StringFilterInput>;
   publishedAt?: InputMaybe<DateTimeFilterInput>;
   title?: InputMaybe<StringFilterInput>;
@@ -733,6 +945,7 @@ export type PageFiltersInput = {
 
 export type PageInput = {
   blocks?: InputMaybe<Array<Scalars['PageBlocksDynamicZoneInput']>>;
+  pageTitle?: InputMaybe<ComponentCommonTitleBlockInput>;
   path?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   title?: InputMaybe<Scalars['String']>;
@@ -760,6 +973,7 @@ export enum PublicationState {
 
 export type Query = {
   __typename?: 'Query';
+  footer?: Maybe<FooterEntityResponse>;
   i18NLocale?: Maybe<I18NLocaleEntityResponse>;
   i18NLocales?: Maybe<I18NLocaleEntityResponseCollection>;
   me?: Maybe<UsersPermissionsMe>;
@@ -774,6 +988,11 @@ export type Query = {
   usersPermissionsRoles?: Maybe<UsersPermissionsRoleEntityResponseCollection>;
   usersPermissionsUser?: Maybe<UsersPermissionsUserEntityResponse>;
   usersPermissionsUsers?: Maybe<UsersPermissionsUserEntityResponseCollection>;
+};
+
+
+export type QueryFooterArgs = {
+  publicationState?: InputMaybe<PublicationState>;
 };
 
 
@@ -1298,12 +1517,32 @@ export type UsersPermissionsUserRelationResponseCollection = {
   data: Array<UsersPermissionsUserEntity>;
 };
 
-export type GetPageContentQueryVariables = Exact<{ [key: string]: never; }>;
+export type ButtonFragment = { __typename?: 'ComponentCommonButton', label?: string | null, href?: string | null, type?: Enum_Componentcommonbutton_Type | null };
+
+export type ImageFragment = { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null };
+
+export type LinkFragment = { __typename?: 'ComponentCommonLink', label?: string | null, href?: string | null };
+
+export type GetFooterQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPageContentQuery = { __typename?: 'Query', pages?: { __typename?: 'PageEntityResponseCollection', data: Array<{ __typename?: 'PageEntity', attributes?: { __typename?: 'Page', blocks?: Array<{ __typename: 'ComponentBlocksBlogBanner' } | { __typename: 'ComponentBlocksFeaturedBanner' } | { __typename: 'ComponentBlocksInfoBanner', title?: string | null, description?: string | null, button?: { __typename?: 'ComponentCommonButton', label?: string | null, href?: string | null, type?: Enum_Componentcommonbutton_Type | null } | null, mainImage?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null } | null } | null } | null, secondaryImages?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null } | null }> } | null } | { __typename: 'ComponentBlocksProjectsBanner', mainDescription?: string | null, title?: string | null, projects?: Array<{ __typename?: 'ComponentProjectProject', title?: string | null, description?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null } | null } | null } | null } | null> | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null } | null } | null } | null, text?: Array<{ __typename?: 'ComponentDescriptionDescription', description?: string | null } | null> | null } | { __typename: 'ComponentBlocksPromoBanner' } | { __typename: 'ComponentBlocksReviewsBanner' } | { __typename: 'ComponentBlocksServicesBanner' } | { __typename: 'ComponentBlocksStartBanner' } | { __typename: 'Error' } | null> | null } | null }> } | null };
+export type GetFooterQuery = { __typename?: 'Query', footer?: { __typename?: 'FooterEntityResponse', data?: { __typename?: 'FooterEntity', attributes?: { __typename?: 'Footer', copyright?: string | null, link?: Array<{ __typename?: 'ComponentCommonLink', label?: string | null, href?: string | null } | null> | null, icons?: Array<{ __typename?: 'ComponentCommonIcon', href?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null } | null> | null } | null } | null } | null };
+
+export type GetPageContentQueryVariables = Exact<{
+  path?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type GetPageContentQuery = { __typename?: 'Query', pages?: { __typename?: 'PageEntityResponseCollection', data: Array<{ __typename?: 'PageEntity', attributes?: { __typename?: 'Page', pageTitle?: { __typename?: 'ComponentCommonTitleBlock', title?: string | null } | null, blocks?: Array<{ __typename: 'ComponentBlocksAboutBanner', theme?: Enum_Componentblocksaboutbanner_Theme | null, title?: string | null, isReversed?: boolean | null, description?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null, items?: Array<{ __typename?: 'ComponentCommonItem', item?: string | null } | null> | null } | { __typename: 'ComponentBlocksBlogBanner', items?: Array<{ __typename?: 'ComponentBlogItem', title?: string | null, description?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null, link?: { __typename?: 'ComponentCommonLink', label?: string | null, href?: string | null } | null } | null> | null } | { __typename: 'ComponentBlocksFactsBanner', items?: Array<{ __typename?: 'ComponentFactsFactsItem', title?: string | null, description?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null } | null> | null } | { __typename: 'ComponentBlocksFeaturedBanner', title?: string | null, link?: { __typename?: 'ComponentCommonLink', label?: string | null, href?: string | null } | null } | { __typename: 'ComponentBlocksImageDescBanner', desc?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null } | { __typename: 'ComponentBlocksInfoBanner', title?: string | null, description?: string | null, button?: { __typename?: 'ComponentCommonButton', label?: string | null, href?: string | null, type?: Enum_Componentcommonbutton_Type | null } | null, mainImage?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null, secondaryImages?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null }> } | null } | { __typename: 'ComponentBlocksModelsBanner', title?: string | null, description?: string | null, items?: Array<{ __typename?: 'ComponentCommonImgTitleBlock', title?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null } | null> | null } | { __typename: 'ComponentBlocksProjectsBanner', mainDescription?: string | null, title?: string | null, projects?: Array<{ __typename?: 'ComponentProjectProject', title?: string | null, description?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null } | null> | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null, text?: Array<{ __typename?: 'ComponentDescriptionDescription', description?: string | null } | null> | null } | { __typename: 'ComponentBlocksPromoBanner', advertisementLabel?: string | null, title?: string | null, description?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null, button?: { __typename?: 'ComponentCommonButton', label?: string | null, href?: string | null, type?: Enum_Componentcommonbutton_Type | null } | null } | { __typename: 'ComponentBlocksReviewsBanner', title?: string | null, reviews?: Array<{ __typename?: 'ComponentReviewsBannerItem', description?: string | null, name?: string | null, surname?: string | null, position?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null } | null> | null } | { __typename: 'ComponentBlocksServicesBanner', tabs?: Array<{ __typename?: 'ComponentTabsTabs', title?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null, content?: { __typename?: 'ComponentServicesServicesContent', title?: string | null, description?: string | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null } | null } | null> | null } | { __typename: 'ComponentBlocksShowOffBanner', title?: string | null, items?: Array<{ __typename?: 'ComponentCommonItem', item?: string | null } | null> | null } | { __typename: 'ComponentBlocksStartBanner', title?: string | null, description?: string | null, isReversed?: boolean | null, items?: Array<{ __typename?: 'ComponentStartBannerItem', promoText?: string | null } | null> | null, image?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null, button?: { __typename?: 'ComponentCommonButton', label?: string | null, href?: string | null, type?: Enum_Componentcommonbutton_Type | null } | null } | { __typename: 'ComponentCommonTitleBlock', title?: string | null } | { __typename: 'Error' } | null> | null } | null }> } | null };
+
+export type GetStaticPagePathsQueryVariables = Exact<{
+  parentPath?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type GetStaticPagePathsQuery = { __typename?: 'Query', pages?: { __typename?: 'PageEntityResponseCollection', data: Array<{ __typename?: 'PageEntity', attributes?: { __typename?: 'Page', path?: string | null } | null }> } | null };
 
 export type GetTopMenuQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetTopMenuQuery = { __typename?: 'Query', topMenu?: { __typename?: 'TopMenuEntityResponse', data?: { __typename?: 'TopMenuEntity', attributes?: { __typename?: 'TopMenu', logo?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string, width?: number | null, height?: number | null } | null } | null } | null, menu?: Array<{ __typename?: 'ComponentMenuItems', label?: string | null, href?: string | null } | null> | null, buttons?: Array<{ __typename?: 'ComponentCommonButton', label?: string | null, href?: string | null, type?: Enum_Componentcommonbutton_Type | null } | null> | null } | null } | null } | null };
+export type GetTopMenuQuery = { __typename?: 'Query', topMenu?: { __typename?: 'TopMenuEntityResponse', data?: { __typename?: 'TopMenuEntity', attributes?: { __typename?: 'TopMenu', logo?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string, alternativeText?: string | null, width?: number | null, height?: number | null } | null } | null } | null, menu?: Array<{ __typename?: 'ComponentMenuItems', label?: string | null, href?: string | null } | null> | null, buttons?: Array<{ __typename?: 'ComponentCommonButton', label?: string | null, href?: string | null, type?: Enum_Componentcommonbutton_Type | null } | null> | null } | null } | null } | null };

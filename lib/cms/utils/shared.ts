@@ -1,12 +1,9 @@
-import { ComponentCommonButton, UploadFileEntity, UploadFileEntityResponse } from "../../../generated/schema"
-import { ButtonType, Image, Link } from "../types/page"
+import { ComponentCommonButton, ComponentCommonLink, UploadFileEntity, UploadFileEntityResponse } from "../../../generated/schema"
+import { Image, Link } from "../types"
+import { ButtonType } from "../types/page"
 
-export const normalizeLink = (link: any) => {
-  const { } = link
-}
-
-export const normalizeButton = (button: Omit<ComponentCommonButton, 'id'>): Link => {
-  const { href, label, type } = button
+export const normalizeButton = (button: Omit<ComponentCommonButton, 'id'>| null ) : Link => {
+  const { href, label, type } = button || {}
 
   return {
     buttonType: type === 'primary' ? ButtonType.Primary : ButtonType.Secondary,
@@ -17,5 +14,12 @@ export const normalizeButton = (button: Omit<ComponentCommonButton, 'id'>): Link
 
 export const normalizeImage = (image: any): Image => ({
   url: `${process.env.STRAPI_FILE_URL}${image?.data?.attributes?.url || ''}`,
-  altText: image.data?.attributes?.alternativeText || '',
+  alternativeText: image.data?.attributes?.alternativeText || '',
+  width: image.data?.attributes?.width || 0,
+  height: image.data?.attributes?.height || 0,
+})
+
+export const normalizeLink = (link: Omit<ComponentCommonLink, 'id'>): Link => ({
+  label: link.label || '',
+  href: link.href || '',
 })

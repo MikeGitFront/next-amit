@@ -1,5 +1,5 @@
 {
-  "name": "amitech",
+  "name": "amitech-landing-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate:definitions": "graphql-codegen --config codegen.yml"
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
@@ -16,15 +16,21 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
+    "clsx": "^1.2.1",
     "graphql": "^16.6.0",
+    "keen-slider": "^6.8.5",
     "next": "13.0.1",
     "packages": "^0.0.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-markdown": "^8.0.5",
+    "react-slick": "^0.29.0",
+    "rehype-raw": "^6.1.1",
     "typescript": "4.8.4"
   },
   "devDependencies": {
     "@graphql-codegen/typescript-operations": "^2.5.10",
+    "@types/react-slick": "^0.23.10",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4"

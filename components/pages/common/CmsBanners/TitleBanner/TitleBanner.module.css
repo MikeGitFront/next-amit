@@ -1,0 +1,11 @@
+.title {
+  @apply my-20 mx-4 font-secondary font-bold text-[2.8rem] pb-8 relative;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  @apply border-primary border-t-[3px] w-24;
+}

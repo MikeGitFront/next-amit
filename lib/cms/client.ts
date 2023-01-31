@@ -1,16 +1,22 @@
-import { ApolloClient, gql, GraphQLRequest, InMemoryCache } from "@apollo/client";
+import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-    uri: process.env.STRAPI_API_URL,
-    cache: new InMemoryCache()
+  uri: process.env.STRAPI_API_URL,
+  cache: new InMemoryCache()
 })
 
-export const fetchGraphqlStrapi = async <T extends any>(query: string): Promise<T> => {
-    const { data } = await client.query<T>({
-        query: gql`
-        ${query}
-        `
-    })
+type Variables = {
+  path?: string
+  parentPath?: string
+}
 
-    return data
+export const fetchGraphqlStrapi = async <T extends any>(query: string, variables?: Variables ): Promise<T> => {
+  const { data } = await client.query<T>({
+    query: gql`
+        ${query}
+        `,
+    variables,
+  })
+
+  return data
 }

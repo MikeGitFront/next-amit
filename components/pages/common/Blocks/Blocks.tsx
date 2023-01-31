@@ -1,23 +1,47 @@
 import React from 'react'
 import { BlockType, PageBlock } from '../../../../lib/cms/types/page'
-import { InfoBanner, ProjectsBanner } from '../CmsBanners'
-
+import { InfoBanner, ProjectsBanner, BlogBanner, FeaturedBanner, PromoBanner, ReviewsBanner, ServicesBanner, StartBanner, TitleBanner, ShowOffBanner, ModelsBanner, AboutBanner, FactsBanner, ImageDescBanner } from '../CmsBanners'
 
 type BlocksProps = {
   blocks: PageBlock[]
 }
 
 export const Blocks: React.FC<BlocksProps> = ({ blocks }) => {
-  console.log('blocksb;cokssa', blocks)
-  return blocks.map(block => {
-    switch (block.type) {
-      case BlockType.InfoBanner: 
-        return <InfoBanner data={block.data} />
-      case BlockType.ProjectsBanner:
-        return <ProjectsBanner data={block.data} />
-      case BlockType.NoType: 
-      return null
-      default: null
-    }
-  })
+  return <>
+    {blocks.map((block, index) => {
+      switch (block.type) {
+        case BlockType.TitleBanner:
+          return <TitleBanner key={index} data={block.data} />
+        case BlockType.InfoBanner:
+          return <InfoBanner key={index} data={block.data} />
+        case BlockType.ProjectsBanner:
+          return <ProjectsBanner key={index} data={block.data} />
+        case BlockType.ServicesBanner:
+          return <ServicesBanner key={index} data={block.data} />
+        case BlockType.PromoBanner:
+          return <PromoBanner key={index} data={block.data} />
+        case BlockType.StartBanner:
+          return <StartBanner key={index} data={block.data} />
+        case BlockType.ReviewsBanner:
+          return <ReviewsBanner key={index} data={block.data} />
+        case BlockType.FeaturedBanner:
+          return <FeaturedBanner key={index} data={block.data} />
+        case BlockType.BlogBanner:
+          return <BlogBanner key={index} data={block.data} />
+        case BlockType.ImageDescBanner:
+          return <ImageDescBanner key={index} data={block.data} />
+        case BlockType.FactsBanner:
+          return <FactsBanner key={index} data={block.data} />
+        case BlockType.AboutBanner:
+          return <AboutBanner key={index} data={block.data} />
+        case BlockType.ModelsBanner:
+          return <ModelsBanner key={index} data={block.data} />
+        case BlockType.ShowOffBanner:
+          return <ShowOffBanner key={index} data={block.data} />
+        case BlockType.NoType:
+          return null
+        default: null
+      }
+    })}
+  </>
 }

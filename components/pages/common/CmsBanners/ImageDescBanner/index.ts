@@ -1,0 +1,1 @@
+export { ImageDescBanner } from './ImageDescBanner'

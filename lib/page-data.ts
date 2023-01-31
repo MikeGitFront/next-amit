@@ -1,15 +1,20 @@
+import { getFooterOperation } from "./cms/operations/get-footer"
 import { getTopMenuOperation } from "./cms/operations/get-top-menu"
-import { getPageContentOperation } from "./cms/operations/get-page-content"
 
 export const getPageData = async () => {
   const { menu, buttons, logo } = await getTopMenuOperation()
-  const { } = await getPageContentOperation()
+  const { copyright, icons, links} = await getFooterOperation()
   
   return {
     header: {
       logo,
       menu,
       buttons,
+    },
+    footer: {
+      copyright,
+      icons,
+      links,
     }
   }
 }
