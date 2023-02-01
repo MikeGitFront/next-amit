@@ -1,0 +1,35 @@
+.textBlock {
+  @apply w-[50%];
+}
+
+.textItem {
+  @apply border-l-2 pl-4 mb-8 border-primary;
+}
+
+.textItem > p {
+  @apply mb-[0.3rem];
+}
+
+.bgBlock::before {
+  content: '';
+  position: absolute;
+  transform: translateX(-50%);
+  top: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  @apply bg-bg-primary;
+}
+
+@media (min-width: 768px) {
+  .textBlock {
+    @apply pr-20;
+  }
+}
+
+@media (min-width: 1024px) {
+  .textBlock {
+    @apply pr-36;
+  }
+}

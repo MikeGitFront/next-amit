@@ -1,0 +1,9 @@
+.desc {
+  @apply flex items-center justify-center max-w-full px-0 my-16 mx-auto font-normal text-xl text-center;
+}
+
+@media (min-width: 768px) {
+  .desc {
+    @apply my-20 max-w-[65%] px-5;
+  }
+}

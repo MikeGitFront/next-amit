@@ -1,6 +1,21 @@
 import React from 'react'
 import { BlockType, PageBlock } from '../../../../lib/cms/types/page'
-import { InfoBanner, ProjectsBanner, BlogBanner, FeaturedBanner, PromoBanner, ReviewsBanner, ServicesBanner, StartBanner, TitleBanner, ShowOffBanner, ModelsBanner, AboutBanner, FactsBanner, ImageDescBanner } from '../CmsBanners'
+import {
+  InfoBanner,
+  ProjectsBanner,
+  BlogBanner,
+  FeaturedBanner,
+  PromoBanner,
+  ReviewsBanner,
+  ServicesBanner,
+  StartBanner,
+  TitleBanner,
+  ShowOffBanner,
+  ModelsBanner,
+  AboutBanner,
+  FactsBanner,
+  ImageDescBanner
+} from '../CmsBanners'
 
 type BlocksProps = {
   blocks: PageBlock[]

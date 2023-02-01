@@ -11,7 +11,7 @@ type TitleBannerProps = {
 export const TitleBanner: React.FC<TitleBannerProps> = ({ data }) => {
   const { title } = data
   return (
-    <Container>
+    <Container className="pl-0">
       <div className={s.title}>
         {title}
       </div>

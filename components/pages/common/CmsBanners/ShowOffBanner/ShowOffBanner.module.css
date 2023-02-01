@@ -1,0 +1,13 @@
+.wrapper {
+  @apply flex flex-col items-center justify-center relative;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  transform: translate(-50%);
+  bottom: 1rem;
+  top: -2rem;
+  left: 50%;
+  @apply border-primary border-t-[5px] w-28;
+}

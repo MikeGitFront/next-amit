@@ -1,0 +1,9 @@
+.wrapper {
+  @apply flex justify-between gap-8 mt-6 mx-auto mb-10;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    @apply max-w-[80%];
+  }
+}
