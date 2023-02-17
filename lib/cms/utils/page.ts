@@ -1,6 +1,6 @@
 import { GetPageContentQuery } from "../../../generated/schema"
 import { BlockType, PageBlock } from "../types/page"
-import { normalizeButton, normalizeImage, normalizeLink } from "./shared"
+import { normalizeButton, normalizeImage, normalizeImages, normalizeLink } from "./shared"
 
 type CmsContentBlock = NonNullable<NonNullable<NonNullable<NonNullable<GetPageContentQuery['pages']>['data'][0]['attributes']>['blocks']>[0]>
 
@@ -44,7 +44,7 @@ const infoBannerBlock = createContentBlockHandler<{ __typename: 'ComponentBlocks
         description: description || '',
         button: button ? normalizeButton(button) : null,
         mainImage: mainImage ? normalizeImage(mainImage) : null,
-        secondaryImages: secondaryImagesData.length > 0 ? secondaryImagesData.map(normalizeImage) : null,
+        secondaryImages: secondaryImagesData.length > 0 ? secondaryImagesData.map(normalizeImages) : null,
       }
     }
   }
@@ -249,7 +249,130 @@ const showOffBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksSh
   }
 })
 
+const contactUsInfoBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksContactUsInfo' }>({
+  normalizeBlock: (contentBlock) => {
+    const { title, items } = contentBlock
+    return {
+      type: BlockType.ContactUsInfoBanner,
+      data: {
+        title: title || '',
+        items: items && items.length > 0 ? items.map(item => (
+          {
+            title: item?.title || '',
+            image: item?.image ? normalizeImage(item.image) : null, items: item?.items && item.items.length > 0 ? item.items.map(item => ({ text: item?.text || '' })) : []
+          })) : []
+      }
+    }
+  }
+})
+
+const commonPromoBanner = createContentBlockHandler<{ __typename: 'ComponentCommonPromoBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { title, button, description, image } = contentBlock
+    return {
+      type: BlockType.CommonPromoBanner,
+      data: {
+        title: title || '',
+        description: description || '',
+        image: image ? normalizeImage(image) : null,
+        button: button ? normalizeButton(button) : null,
+      }
+    }
+  }
+})
+
+const onBoardingPromoBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksOnBoardingPromoBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { title, bgImage, button, description, images, label, mainImage } = contentBlock
+    const imagesData = images?.data || []
+    console.log('imagesDat', imagesData)
+    return {
+      type: BlockType.OnBoardingPromoBanner,
+      data: {
+        title: title || '',
+        label: label || '',
+        description: description || '',
+        button: button ? normalizeButton(button) : null,
+        images: imagesData.length > 0 ? imagesData.map(normalizeImages) : null,
+        bgImage: bgImage ? normalizeImage(bgImage) : null,
+        mainImage: mainImage ? normalizeImage(mainImage) : null,
+      }
+    }
+  }
+})
+
+const onBoardingChooseBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksOnBoardingChooseBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { title, description, items, subtitle } = contentBlock
+    return {
+      type: BlockType.OnBoardingChooseBanner,
+      data: {
+        title: title || '',
+        subtitle: subtitle || '',
+        description: description || '',
+        items: items && items.length > 0 ? items.map((item) => ({
+          description: item?.description || '',
+          image: item?.image ? normalizeImage(item.image) : null,
+          title: item?.title || '',
+        })) : []
+      }
+    }
+  }
+})
+
+const onBoardingFeaturesBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksOnBoardingFeaturesBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { title, description, headers, rows } = contentBlock
+    return {
+      type: BlockType.OnBoardingFeaturesBanner,
+      data: {
+        title: title || '',
+        description: description || '',
+        headers: headers && headers.length > 0 ? headers.map(item => item?.text || '') : [],
+        rows: rows && rows.length > 0 ? rows.map((item) => ({
+          items: item?.items && item.items.length > 0 ? item.items.map(item => item?.text || '') : []
+        })) : []
+      }
+    }
+  }
+})
+
+const onBoardingQBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksOnBoardingQaBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { title, items } = contentBlock
+    return {
+      type: BlockType.OnBoardingQABanner,
+      data: {
+        title: title || '',
+        items: items && items.length > 0 ? items.map((item) => ({
+          description: item?.description || '',
+          image: item?.image ? normalizeImage(item.image) : null,
+          title: item?.title || '',
+        })) : []
+      }
+    }
+  }
+})
+
+const onBoardingCreateStoreBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksOnBoardingCreateStoreBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { button } = contentBlock
+    return {
+      type: BlockType.OnBoardingCreateStoreBanner,
+      data: {
+        button: button ? normalizeButton(button) : null,
+      }
+    }
+  }
+})
+
 const blockHandlers = {
+  ComponentBlocksOnBoardingPromoBanner: onBoardingPromoBanner,
+  ComponentBlocksOnBoardingChooseBanner: onBoardingChooseBanner,
+  ComponentBlocksOnBoardingFeaturesBanner: onBoardingFeaturesBanner,
+  ComponentBlocksOnBoardingQaBanner: onBoardingQBanner,
+  ComponentBlocksOnBoardingCreateStoreBanner: onBoardingCreateStoreBanner,
+  ComponentBlocksContactUsInfo: contactUsInfoBanner,
   ComponentCommonTitleBlock: titleBannerBlock,
   ComponentBlocksImageDescBanner: imageDescBanner,
   ComponentBlocksFactsBanner: factsBanner,
@@ -264,11 +387,10 @@ const blockHandlers = {
   ComponentBlocksReviewsBanner: reviewsBanner,
   ComponentBlocksServicesBanner: servicesBanner,
   ComponentBlocksStartBanner: startBanner,
+  ComponentCommonPromoBanner: commonPromoBanner,
 }
 
-type BlockHandlers = typeof blockHandlers
-
-const createContentHadnler = ({ blockHandlersMap }: { blockHandlersMap: BlockHandlers }) => {
+const createContentHadnler = ({ blockHandlersMap }: { blockHandlersMap: typeof blockHandlers }) => {
   const normalizeBlock = (contentBlock: CmsContentBlock): PageBlock => {
     if (contentBlock.__typename === 'Error') {
       return {
@@ -278,7 +400,7 @@ const createContentHadnler = ({ blockHandlersMap }: { blockHandlersMap: BlockHan
 
     const blockHandler = blockHandlersMap[contentBlock.__typename]
     if (blockHandler) {
-      // @ts-ignore
+      // @ts-ignore field to distinguish correct type cannot be added
       return blockHandler.normalizeBlock(contentBlock)
     }
     return {

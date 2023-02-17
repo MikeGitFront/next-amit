@@ -37,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({ headerInfo }) => {
         <Link href="/">
           <Image alt={alternativeText} width={190} height={50} src={url}></Image>
         </Link>
-        <div className="flex pl-[70px] gap-x-8 text-lg">
+        <div className="flex items-center pl-[70px] gap-x-8 text-lg">
           {menu.map((item, index) => (
             <Link key={index} className={s.link} href={item.href}>{item.label}</Link>
           ))}

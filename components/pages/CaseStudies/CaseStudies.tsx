@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 import React from "react"
 import { PageBlock } from '../../../lib/cms/types/page'
 import { Blocks } from "../common/Blocks"
@@ -8,12 +9,13 @@ type CaseStudiesPageProps = {
   title: string
 }
 
-const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({ blocks, title }) => {
-  console.log('caseStudiesBlocks', blocks, title)
+const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({ blocks }) => {
+  const { asPath } = useRouter()
+ 
   return (
     <>
       <Blocks blocks={blocks} />
-      <div className={s.bgBlock} />
+      {asPath === '/case-studies' && <div className={s.bgBlock} />}
     </>
   )
 }

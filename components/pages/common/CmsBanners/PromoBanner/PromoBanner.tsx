@@ -18,7 +18,7 @@ export const PromoBanner: React.FC<PromoBannerProps> = ({ data }) => {
         <div className="flex flex-col">
           <div className="text-[2.8rem] text-[#fff] font-bold mb-2">{title}</div>
           <div className="text-base pb-4 text-[#fff]">{description}</div>
-          <Button type={button?.buttonType} href={button?.href || ''}>{button?.label.toUpperCase()}</Button>
+          <Button type={button?.buttonType} href={button?.href}>{button?.label.toUpperCase()}</Button>
         </div>
         <div className="absolute z-10 bottom-0 right-0">
           <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={512} height={300} />

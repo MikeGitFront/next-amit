@@ -1,0 +1,1 @@
+export { OnBoardingPromoBanner } from './OnBoardingPromoBanner'

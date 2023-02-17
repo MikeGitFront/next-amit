@@ -1,0 +1,1 @@
+export { CommonPromoBanner } from './CommonPromoBanner'

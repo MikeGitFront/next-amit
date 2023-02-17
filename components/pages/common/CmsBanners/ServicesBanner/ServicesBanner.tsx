@@ -35,13 +35,11 @@ export const ServicesBanner: React.FC<ServicesBannerProps> = ({ data }) => {
     )
   }, [tabs])
 
-  console.log('selectedTab', selectedTab)
-
   return (
     <Container>
-      <div className="flex gap-8 mb-14">{headings.map(({ title, image }) => {
+      <div className="flex gap-8 mb-14">{headings.map(({ title, image }, index) => {
         return (
-          <button className={cn(s.headingItem, `${selectedTab === title ? 'bg-[#dbd8d7] before:content-[""]' : 'bg-[#fff]'}`)} onClick={() => setSelectedTab(title)}>
+          <button key={index} className={cn(s.headingItem, `${selectedTab === title ? 'bg-[#dbd8d7] before:content-[""]' : 'bg-[#fff]'}`)} onClick={() => setSelectedTab(title)}>
             <div>
               <Image style={{ "objectFit": 'contain' }} src={image?.url || ''} alt={image?.alternativeText || ''} width={image?.width} height={image?.height} />
             </div>

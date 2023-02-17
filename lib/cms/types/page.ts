@@ -15,6 +15,13 @@ export enum BlockType {
   AboutBanner = 'AboutBanner',
   ModelsBanner = 'ModelsBanner',
   ShowOffBanner = 'ShowOffBanner',
+  ContactUsInfoBanner = 'ContactUsInfoBanner',
+  OnBoardingPromoBanner = 'OnBoardingPromoBanner',
+  OnBoardingChooseBanner = 'OnBoardingChooseBanner',
+  OnBoardingFeaturesBanner = 'OnBoardingFeaturesBanner',
+  OnBoardingQABanner = 'OnBoardingQABanner',
+  OnBoardingCreateStoreBanner = 'OnBoardingCreateStoreBanner',
+  CommonPromoBanner = 'CommonPromoBanner',
   NoType = 'NoType',
 }
 
@@ -209,6 +216,100 @@ export type ShowOffBanner = {
   data: ShowOffBannerData
 }
 
+export type ContactUsInfoBannerData = {
+  title: string
+  items: {
+    image: Image | null
+    title: string
+    items: {
+      text: string
+    }[]
+  }[]
+}
+
+export type ContactUsInfoBanner = {
+  type: BlockType.ContactUsInfoBanner
+  data: ContactUsInfoBannerData
+}
+
+export type CommonPromoBannerData = {
+  title: string
+  description: string
+  image: Image | null
+  button: Link | null
+}
+
+export type CommonPromoBanner = {
+  type: BlockType.CommonPromoBanner
+  data: CommonPromoBannerData
+}
+
+export type OnBoardingPromoBannerData = {
+  label: string
+  title: string
+  description: string
+  images: Image[] | null
+  button: Link | null
+  mainImage: Image | null
+  bgImage: Image | null
+}
+
+export type OnBoardingPromoBanner = {
+  type: BlockType.OnBoardingPromoBanner
+  data: OnBoardingPromoBannerData
+}
+
+export type OnBoardingChooseBannerData = {
+  title: string
+  description: string
+  subtitle: string
+  items: {
+    image: Image | null
+    title: string
+    description: string
+  }[]
+}
+
+export type OnBoardingChooseBanner = {
+  type: BlockType.OnBoardingChooseBanner
+  data: OnBoardingChooseBannerData
+}
+
+export type OnBoardingFeaturesBannerData = {
+  title: string
+  description: string
+  headers: string[]
+  rows: { items: string[] }[]
+}
+
+export type OnBoardingFeaturesBanner = {
+  type: BlockType.OnBoardingFeaturesBanner
+  data: OnBoardingFeaturesBannerData
+}
+
+export type OnBoardingQABannerData = {
+  title: string
+  items: {
+    image: Image | null
+    title: string
+    description: string
+  }[]
+}
+
+export type OnBoardingQABanner = {
+  type: BlockType.OnBoardingQABanner
+  data: OnBoardingQABannerData
+}
+
+export type OnBoardingCreateStoreBannerData = {
+  button: Link | null
+}
+
+export type OnBoardingCreateStoreBanner = {
+  type: BlockType.OnBoardingCreateStoreBanner
+  data: OnBoardingCreateStoreBannerData
+}
+
 export type PageBlock =
   | InfoBanner
   | ProjectsBanner
@@ -224,4 +325,11 @@ export type PageBlock =
   | AboutBanner
   | ModelsBanner
   | ShowOffBanner
+  | ContactUsInfoBanner
+  | OnBoardingPromoBanner
+  | OnBoardingChooseBanner
+  | CommonPromoBanner
+  | OnBoardingFeaturesBanner
+  | OnBoardingQABanner
+  | OnBoardingCreateStoreBanner
   | { type: BlockType.NoType }
