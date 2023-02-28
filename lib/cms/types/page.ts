@@ -22,6 +22,13 @@ export enum BlockType {
   OnBoardingQABanner = 'OnBoardingQABanner',
   OnBoardingCreateStoreBanner = 'OnBoardingCreateStoreBanner',
   CommonPromoBanner = 'CommonPromoBanner',
+  ClientBanner = 'ClientBanner',
+  AboutProjectBanner = 'AboutProjectBanner',
+  HeadingBanner = 'HeadingBanner',
+  RichTextBanner = 'RichTextBanner',
+  CrossPlatformBanner = 'CrossPlatformBanner',
+  ComponentsTableBanner = 'ComponentsTableBanner',
+  IntegrationBanner = 'IntegrationBanner',
   NoType = 'NoType',
 }
 
@@ -310,6 +317,82 @@ export type OnBoardingCreateStoreBanner = {
   data: OnBoardingCreateStoreBannerData
 }
 
+export type ClientBannerData = {
+  items: {
+    image: Image | null
+    title: string
+    description: string
+  }[]
+  images: Image[] | null
+}
+
+export type ClientBanner = {
+  type: BlockType.ClientBanner
+  data: ClientBannerData
+}
+
+export type AboutProjectBannerData = {
+  title: string
+  description: string
+}
+
+export type AboutProjectBanner = {
+  type: BlockType.AboutProjectBanner
+  data: AboutProjectBannerData
+}
+
+export type HeadingBannerData = {
+  text: string
+}
+
+export type HeadingBanner = {
+  type: BlockType.HeadingBanner
+  data: HeadingBannerData
+}
+
+export type RichTextBannerData = {
+  text: string
+}
+
+export type RichTextBanner = {
+  type: BlockType.RichTextBanner
+  data: RichTextBannerData
+}
+
+export type CrossPlatformBannerData = {
+  title: string
+  description: string
+  image: Image | null
+}
+
+export type CrossPlatformBanner = {
+  type: BlockType.CrossPlatformBanner
+  data: CrossPlatformBannerData
+}
+
+export type ComponentsTableBannerData = {
+  title: string
+  description: string
+  headers: string[]
+  rows: { items: string[] }[]
+}
+
+export type ComponentsTableBanner = {
+  type: BlockType.ComponentsTableBanner
+  data: ComponentsTableBannerData
+}
+
+export type IntegrationBannerData = {
+  title: string
+  description: string
+  image: Image | null 
+}
+
+export type IntegrationBanner = {
+  type: BlockType.IntegrationBanner
+  data: IntegrationBannerData
+}
+
 export type PageBlock =
   | InfoBanner
   | ProjectsBanner
@@ -332,4 +415,11 @@ export type PageBlock =
   | OnBoardingFeaturesBanner
   | OnBoardingQABanner
   | OnBoardingCreateStoreBanner
+  | ClientBanner
+  | AboutProjectBanner
+  | HeadingBanner
+  | RichTextBanner
+  | CrossPlatformBanner
+  | ComponentsTableBanner
+  | IntegrationBanner
   | { type: BlockType.NoType }

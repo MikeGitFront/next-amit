@@ -46,7 +46,7 @@ query getPageContent ($path: String) {
               ...Image
             }
             title
-            text {
+            items {
               description
             }
           }
@@ -246,6 +246,59 @@ query getPageContent ($path: String) {
           ... on ComponentBlocksOnBoardingCreateStoreBanner {
             button {
               ...Button
+            }
+          }
+          ... on ComponentBlocksClientBanner {
+            items {
+              image {
+                ...Image
+              }
+              title
+              description
+            }
+            images {
+              data {
+                attributes {
+                  alternativeText
+                  url
+                }
+              }
+            }
+          }
+          ... on ComponentBlocksAboutProjectBanner {
+            title
+            description
+          }
+          ... on ComponentBlocksHeadingBanner {
+            text
+          }
+          ... on ComponentBlocksRichTextBanner {
+            text
+          }
+          ... on ComponentBlocksCrossPlatformBanner {
+            title
+            description
+            image {
+              ...Image
+            }
+          }
+          ... on ComponentBlocksComponentsTableBanner {
+            title
+            description
+            headers {
+              text
+            }
+            rows(pagination: { limit: 100 }) {
+              items {
+                text
+              }
+            }
+          }
+          ... on ComponentBlocksIntegrationBanner {
+            title
+            description
+            image {
+              ...Image
             }
           }
         }

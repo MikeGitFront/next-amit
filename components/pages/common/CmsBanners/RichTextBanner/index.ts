@@ -1,0 +1,1 @@
+export { RichTextBanner } from './RichTextBanner'

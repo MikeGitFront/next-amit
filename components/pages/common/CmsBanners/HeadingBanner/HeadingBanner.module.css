@@ -1,0 +1,12 @@
+.heading {
+  @apply flex items-center justify-center relative w-[65%] text-[20px] pt-8 my-7;
+}
+
+.heading::before {
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  @apply border-primary border-t-[1px] w-[20%];
+}

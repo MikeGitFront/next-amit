@@ -3,9 +3,13 @@ import { GetPageContentQuery } from '../../../generated/schema'
 import { getPageContentQuery } from "../queries/get-page-content"
 import { filterEdges } from "../utils/common"
 import { contentHandler } from "../utils/page"
+// import { getStaticQuery } from "../queries/getStaticQuery"
 
 export const getPageContentOperation = async (path: string) => {
+  // const query = getStaticQuery(path)
+  // console.log('deletion',path)
   const { pages } = await fetchGraphqlStrapi<GetPageContentQuery>(getPageContentQuery, { path })
+  // const { pages } = await query
   const [page] = pages?.data || []
 
   if (!page) {

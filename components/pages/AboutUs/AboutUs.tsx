@@ -8,7 +8,6 @@ type AboutUsPageProps = {
 }
 
 const AboutUsPage: React.FC<AboutUsPageProps> = ({ blocks, title }) => {
-  console.log('AboutUsPageProps', blocks, title)
   return <Blocks blocks={blocks} />
 }
 

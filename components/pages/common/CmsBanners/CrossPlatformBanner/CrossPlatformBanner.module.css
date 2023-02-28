@@ -1,0 +1,15 @@
+.desc {
+  @apply text-text-primary;
+}
+
+.desc > p {
+  @apply mb-4;
+}
+
+.desc > ul {
+  @apply list-disc ml-8;
+}
+
+.desc > ul > li {
+  @apply pb-[1px] pl-2;
+}

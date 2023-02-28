@@ -5,6 +5,7 @@ import s from './Header.module.css'
 import { Image as ImageT, Link as LinkT, Button as ButtonT } from '../../../../lib/cms'
 import { Button } from '../UI/Button'
 import cn from 'clsx'
+import { useRouter } from 'next/router'
 
 type HeaderProps = {
   headerInfo: {
@@ -17,6 +18,7 @@ type HeaderProps = {
 export const Header: React.FC<HeaderProps> = ({ headerInfo }) => {
   const { logo: { url, alternativeText }, menu, buttons } = headerInfo
   const [isShadow, setIsShadow] = useState(false)
+  const { pathname } = useRouter()
 
   useEffect(() => {
     const handleScrollY = () => {
@@ -43,11 +45,11 @@ export const Header: React.FC<HeaderProps> = ({ headerInfo }) => {
           ))}
         </div>
       </div>
-      <div className={s.buttonsBlock}>
+      {pathname !== "/onboarding" && <div className={s.buttonsBlock}>
         {buttons.map((item, index) => (
           <Button key={index} type={item.buttonType} href={item.href || ''}>{item.label}</Button>
         ))}
-      </div>
+      </div>}
     </header>
   )
 }

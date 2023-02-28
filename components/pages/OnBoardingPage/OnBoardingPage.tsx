@@ -8,7 +8,6 @@ type OnBoardingPageProps = {
 }
 
 const OnBoardingPage: React.FC<OnBoardingPageProps> = ({ blocks, title }) => {
-  console.log('OnBoardingPageProps', blocks, title)
   return <Blocks blocks={blocks} />
 }
 

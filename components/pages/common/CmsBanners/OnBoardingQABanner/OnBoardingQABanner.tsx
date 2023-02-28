@@ -25,9 +25,9 @@ export const OnBoardingQABanner: React.FC<OnBoardingQABannerProps> = ({ data }) 
       <div className="pb-20">
         <div className="text-center font-bold font-secondary text-[2.8rem] pb-5">{title}</div>
         <div>
-          {itemsState.map(({ isActive, description, image, title, key }) => {
+          {itemsState.map(({ isActive, description, image, title, key }, index) => {
             return (
-              <div className="flex flex-col items-center justify-center">
+              <div key={index} className="flex flex-col items-center justify-center">
                 <button onClick={() => handleOpen(key)} className="border border-[#e5e7eb] mb-[0.6rem] w-full min-h-[3.75rem] shadow-[0_0_20px_rgba(0,0,0,.05)] flex text-2xl text-text-primary justify-between items-center cursor-pointer">
                   <div className="ml-6">{title}</div>
                   <div className="w-12"><Image src={ArrowDown} className={` ${isActive ? 'rotate-180' : ''}`} alt="check mark icon" width={18} height={14} /></div>

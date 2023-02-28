@@ -21,7 +21,14 @@ import {
   OnBoardingChooseBanner,
   OnBoardingFeaturesBanner,
   OnBoardingQABanner,
-  OnBoardingCreateStoreBanner
+  OnBoardingCreateStoreBanner,
+  ClientBanner,
+  AboutProjectBanner,
+  HeadingBanner,
+  RichTextBanner,
+  CrossPlatformBanner,
+  IntegrationBanner,
+  ComponentsTableBanner
 } from '../CmsBanners'
 
 type BlocksProps = {
@@ -75,6 +82,20 @@ export const Blocks: React.FC<BlocksProps> = ({ blocks }) => {
             return <OnBoardingCreateStoreBanner key={index} data={block.data} />
           case BlockType.CommonPromoBanner:
             return <CommonPromoBanner key={index} data={block.data} />
+          case BlockType.ClientBanner:
+            return <ClientBanner key={index} data={block.data} />
+          case BlockType.AboutProjectBanner:
+            return <AboutProjectBanner key={index} data={block.data} />
+          case BlockType.HeadingBanner:
+            return <HeadingBanner key={index} data={block.data} />
+          case BlockType.RichTextBanner:
+            return <RichTextBanner key={index} data={block.data} />
+          case BlockType.CrossPlatformBanner:
+            return <CrossPlatformBanner key={index} data={block.data} />
+          case BlockType.IntegrationBanner:
+            return <IntegrationBanner key={index} data={block.data} />
+          case BlockType.ComponentsTableBanner:
+            return <ComponentsTableBanner key={index} data={block.data} />
           case BlockType.NoType:
             return null
           default: null

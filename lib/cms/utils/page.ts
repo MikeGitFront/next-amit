@@ -52,12 +52,12 @@ const infoBannerBlock = createContentBlockHandler<{ __typename: 'ComponentBlocks
 
 const projectsBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksProjectsBanner' }>({
   normalizeBlock: (contentBlock) => {
-    const { image, mainDescription, projects, text, title } = contentBlock
+    const { image, mainDescription, projects, items, title } = contentBlock
     return {
       type: BlockType.ProjectsBanner,
       data: {
         title: title || '',
-        text: (text || []).map(text => text?.description || ''),
+        text: (items || []).map(text => text?.description || ''),
         image: image ? normalizeImage(image) : null,
         mainDescription: mainDescription || '',
         projects: (projects || []).map(item => ({
@@ -285,7 +285,6 @@ const onBoardingPromoBanner = createContentBlockHandler<{ __typename: 'Component
   normalizeBlock: (contentBlock) => {
     const { title, bgImage, button, description, images, label, mainImage } = contentBlock
     const imagesData = images?.data || []
-    console.log('imagesDat', imagesData)
     return {
       type: BlockType.OnBoardingPromoBanner,
       data: {
@@ -366,6 +365,106 @@ const onBoardingCreateStoreBanner = createContentBlockHandler<{ __typename: 'Com
   }
 })
 
+const clientBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksClientBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { items , images } = contentBlock
+    const imagesData = images?.data || []
+    return {
+      type: BlockType.ClientBanner,
+      data: {
+        items: items && items.length > 0 ? items.map((item) => ({
+          description: item?.description || '',
+          image: item?.image ? normalizeImage(item.image) : null,
+          title: item?.title || '',
+        })) : [],
+        images: imagesData.length > 0 ? imagesData.map(normalizeImages) : null,
+      }
+    }
+  }
+})
+
+const aboutProjectBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksAboutProjectBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { description, title } = contentBlock
+    return {
+      type: BlockType.AboutProjectBanner,
+      data: {
+        title: title || '',
+        description: description || '',
+      }
+    }
+  }
+})
+
+const headingBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksHeadingBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { text } = contentBlock
+    return {
+      type: BlockType.HeadingBanner,
+      data: {
+        text: text || '',
+      }
+    }
+  }
+})
+
+const richTextBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksRichTextBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { text } = contentBlock
+    return {
+      type: BlockType.RichTextBanner,
+      data: {
+        text: text || '',
+      }
+    }
+  }
+})
+
+const crossPlatformBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksCrossPlatformBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { description, image, title } = contentBlock
+    return {
+      type: BlockType.CrossPlatformBanner,
+      data: {
+        title: title || '',
+        description: description || '',
+        image: image ? normalizeImage(image) : null,
+      }
+    }
+  }
+})
+
+const integrationBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksIntegrationBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { description, image, title } = contentBlock
+    return {
+      type: BlockType.IntegrationBanner,
+      data: {
+        title: title || '',
+        description: description || '',
+        image: image ? normalizeImage(image) : null,
+      }
+    }
+  }
+})
+
+const componentsTableBanner = createContentBlockHandler<{ __typename: 'ComponentBlocksComponentsTableBanner' }>({
+  normalizeBlock: (contentBlock) => {
+    const { title, description, headers, rows } = contentBlock
+    return {
+      type: BlockType.ComponentsTableBanner,
+      data: {
+        title: title || '',
+        description: description || '',
+        headers: headers && headers.length > 0 ? headers.map(item => item?.text || '') : [],
+        rows: rows && rows.length > 0 ? rows.map((item) => ({
+          items: item?.items && item.items.length > 0 ? item.items.map(item => item?.text || '') : []
+        })) : []
+      }
+    }
+  }
+})
+
 const blockHandlers = {
   ComponentBlocksOnBoardingPromoBanner: onBoardingPromoBanner,
   ComponentBlocksOnBoardingChooseBanner: onBoardingChooseBanner,
@@ -388,6 +487,13 @@ const blockHandlers = {
   ComponentBlocksServicesBanner: servicesBanner,
   ComponentBlocksStartBanner: startBanner,
   ComponentCommonPromoBanner: commonPromoBanner,
+  ComponentBlocksClientBanner: clientBanner,
+  ComponentBlocksAboutProjectBanner: aboutProjectBanner,
+  ComponentBlocksHeadingBanner: headingBanner,
+  ComponentBlocksRichTextBanner: richTextBanner,
+  ComponentBlocksCrossPlatformBanner: crossPlatformBanner,
+  ComponentBlocksComponentsTableBanner: componentsTableBanner,
+  ComponentBlocksIntegrationBanner: integrationBanner,
 }
 
 const createContentHadnler = ({ blockHandlersMap }: { blockHandlersMap: typeof blockHandlers }) => {
@@ -397,7 +503,6 @@ const createContentHadnler = ({ blockHandlersMap }: { blockHandlersMap: typeof b
         type: BlockType.NoType,
       }
     }
-
     const blockHandler = blockHandlersMap[contentBlock.__typename]
     if (blockHandler) {
       // @ts-ignore field to distinguish correct type cannot be added

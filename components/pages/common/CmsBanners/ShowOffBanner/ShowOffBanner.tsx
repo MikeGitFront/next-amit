@@ -14,9 +14,9 @@ export const ShowOffBanner: React.FC<ShowOffBannerProps> = ({ data }) => {
     <Container>
       <div className={s.wrapper}>
         <div className="text-3xl mb-4 text-text-primary">{title}</div>
-        {items.map(({ item }) => {
+        {items.map(({ item }, index) => {
           return (
-            <span className="mb-4 text-text-primary">{item}</span>
+            <span key={index} className="mb-4 text-text-primary">{item}</span>
           )
         })}
       </div>

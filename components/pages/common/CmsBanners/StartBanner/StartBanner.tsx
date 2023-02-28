@@ -18,9 +18,9 @@ export const StartBanner: React.FC<StartBannerProps> = ({ data }) => {
           <div className="font-bold text-[2.8rem] mb-2 font-secondary">{title}</div>
           <h5 className="text-heading mb-6">{description}</h5>
           <div className="mb-4">
-            {items.map(label => {
+            {items.map((label, index) => {
               return (
-                <div className="flex gap-4 items-center mb-3">
+                <div key={index} className="flex gap-4 items-center mb-3">
                   <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(0,0,0,0.1)]">
                     <Image src={CheckMark} alt="check mark icon" width={24} height={22} />
                   </div>

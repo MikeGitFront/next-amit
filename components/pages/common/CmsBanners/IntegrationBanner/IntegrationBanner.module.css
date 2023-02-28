@@ -1,0 +1,7 @@
+.desc {
+  @apply text-text-primary;
+}
+
+.desc > p {
+  @apply mb-[0.3rem];
+}
