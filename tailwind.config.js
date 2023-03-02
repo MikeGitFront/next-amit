@@ -5,6 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      "sm": "640px",
+      "md": "768px",
+      "xl": "1280px",
+    },
     fontFamily: {
       sans: ['Nunito Sans','sans-serif'],
       serif: ['Merriweather', 'serif'],

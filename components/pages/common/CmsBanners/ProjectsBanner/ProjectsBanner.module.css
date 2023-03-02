@@ -1,5 +1,5 @@
 .projects {
-  @apply flex gap-4 my-10 relative;
+  @apply grid grid-cols-2 grid-rows-2 md:flex gap-4 my-10 relative;
 }
 
 .mainDescription {
@@ -7,7 +7,7 @@
 }
 
 .descriptionWrapper {
-  @apply relative pt-6 mx-auto max-w-[900px];
+  @apply text-center md:text-left relative pt-6 mx-auto max-w-[900px];
 }
 
 .mainDescription::before {
@@ -52,13 +52,7 @@
 }
 
 .blogItem {
-  @apply flex flex-col items-center justify-between bg-[#fff] w-[25%] shadow-[0_0_40px_rgba(0,0,0,0.1)];
-}
-
-@media (min-width: 640px) {
-  .blogItem {
-    width: calc(50% - 2rem)
-  }
+  @apply col-span-1 row-span-1 flex flex-col items-center justify-between bg-[#fff] md:w-[25%] shadow-[0_0_40px_rgba(0,0,0,0.1)];
 }
 
 @media (min-width: 768px) {

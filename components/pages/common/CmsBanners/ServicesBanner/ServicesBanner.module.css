@@ -1,5 +1,5 @@
 .headingItem {
-  @apply min-h-[10rem] w-[20%] flex flex-col justify-evenly items-center relative;
+  @apply min-h-[10rem] w-[100%] md:w-[20%] shadow-[0_0_15px_rgba(0,0,0,.15)] flex flex-col justify-evenly items-center relative;
 }
 
 .headingItem::before {
@@ -12,6 +12,7 @@
   background-color: #dbd8d7;
   border-color: white;
   border-right-color: transparent;
+  @apply hidden md:block;
 }
 
 .text {

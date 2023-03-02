@@ -7,6 +7,7 @@ import s from './ReviewsBanner.module.css'
 import Quote from '../../../../icons/quote.svg'
 import cn from 'clsx'
 import { Arrow } from "../../../../icons/Arrow/Arrow"
+import { useScreenWidth } from "../../../../hooks/useScreenWidth"
 
 type ReviewsBannerProps = {
   data: ReviewsBannerData
@@ -17,11 +18,13 @@ export const ReviewsBanner: React.FC<ReviewsBannerProps> = ({ data }) => {
 
   const [isMounted, setIsMounted] = useState(false)
 
+  const { md } = useScreenWidth()
+
   const [ref, sliderRef] = useKeenSlider({
     initial: 0,
     loop: true,
     slides: {
-      perView: 2,
+      perView: md ? 2 : 1,
     },
     created() {
       setIsMounted(true)
@@ -33,7 +36,7 @@ export const ReviewsBanner: React.FC<ReviewsBannerProps> = ({ data }) => {
     <Container>
       <div className="my-10 overflow-hidden">
         <div className="flex justify-between">
-          <div className="text-[2.8rem] font-bold font-secondary">{title}</div>
+          <div className="text-4xl md:text-[2.8rem] font-bold font-secondary">{title}</div>
           {isMounted && sliderRef.current && (
             <div className="w-40 h-20 flex gap-4">
               <div className="flex items-center justify-center w-12 h-12 bg-[rgba(0,0,0,.05)] rounded-full">

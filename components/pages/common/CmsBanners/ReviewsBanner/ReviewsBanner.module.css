@@ -3,7 +3,7 @@
 }
 
 .sliderItem {
-  @apply p-4 grid grid-cols-[auto_1fr] gap-x-4 grid-rows-[auto_1fr_auto_auto];
+  @apply p-4 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-x-4 grid-rows-2 md:grid-rows-[auto_1fr_auto_auto];
 }
 
 .initials {

@@ -13,7 +13,7 @@ export const BlogBanner: React.FC<BlogBannerProps> = ({ data }) => {
   const { items } = data
   return (
     <Container>
-      <div className="flex justify-evenly mb-12 gap-8">
+      <div className="flex flex-col md:flex-row justify-evenly mb-12 gap-8">
         {items.map(({ description, image, link, title }, index) => (
           <div key={index} className={`shadow-[0_0_15px_rgba(0,0,0,.1)] max-w-[440px] flex flex-col self-stretch justify-start w-[${100 / items.length}%] bg-[#fff]`}>
             <Link href={link?.href || ''}>

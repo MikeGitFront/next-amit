@@ -1,17 +1,17 @@
 .wrapper {
-  @apply bg-bg-primary mt-16 mb-10 w-screen translate-x-[calc((1408px-100vw)/2)];
+  @apply bg-bg-primary mt-16 mb-10 w-screen xl:translate-x-[calc((1408px-100vw)/2)];
 }
 
 .content {
-  @apply relative min-h-[340px] pl-[13%] flex flex-col justify-center;
+  @apply relative min-h-[576px] md:min-h-[340px] pl-[5%] pt-[13%] md:pt-0 md:pl-[13%] flex flex-col md:justify-center;
 }
 
 .content::before {
   content: '';
   position: absolute;
   top: -2.5rem;
-  left: 8%;
   z-index: 2;
   height: 5rem;
-  width: 5rem
+  width: 5rem;
+  @apply left-0 md:left-[8%];
 }
