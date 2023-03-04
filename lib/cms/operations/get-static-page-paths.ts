@@ -1,5 +1,5 @@
 import { fetchGraphqlStrapi } from "../client"
-import { GetStaticPagePathsQuery } from '../../../generated/schema'
+import { GetStaticPagePathsQuery } from "../../../generated/schema"
 import { getStaticPagesPathsQuery } from "../queries/get-static-pages-paths"
 
 export const getStaticPagePathsOperation = async (parentPath: string) => {

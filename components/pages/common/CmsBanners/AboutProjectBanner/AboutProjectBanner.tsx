@@ -1,9 +1,9 @@
-import React from 'react'
-import rehypeRaw from 'rehype-raw'
-import ReactMarkdown from 'react-markdown'
-import { AboutProjectBannerData } from '../../../../../lib/cms'
+import React from "react"
+import rehypeRaw from "rehype-raw"
+import ReactMarkdown from "react-markdown"
+import { AboutProjectBannerData } from "../../../../../lib/cms"
 import { Container } from "../../UI/Container"
-import s from './AboutProjectBanner.module.css'
+import s from "./AboutProjectBanner.module.css"
 
 export type AboutProjectBannerProps = {
   data: AboutProjectBannerData

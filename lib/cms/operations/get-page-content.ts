@@ -1,5 +1,5 @@
 import { fetchGraphqlStrapi } from "../client"
-import { GetPageContentQuery } from '../../../generated/schema'
+import { GetPageContentQuery } from "../../../generated/schema"
 import { getPageContentQuery } from "../queries/get-page-content"
 import { filterEdges } from "../utils/common"
 import { contentHandler } from "../utils/page"
@@ -20,7 +20,7 @@ export const getPageContentOperation = async (path: string) => {
   }
 
   const blocks = page.attributes?.blocks || []
-  const title = page.attributes?.pageTitle || ''
+  const title = page.attributes?.pageTitle || ""
 
   const content = filterEdges(blocks)
 

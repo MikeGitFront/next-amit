@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState } from "react"
 import { OnBoardingQABannerData } from "../../../../../lib/cms"
 import { Container } from "../../UI/Container"
-import ArrowDown from '../../../../icons/arrow-down.svg'
+import ArrowDown from "../../../../icons/arrow-down.svg"
 import Image from "next/image"
 
 export type OnBoardingQABannerProps = {
@@ -30,7 +30,7 @@ export const OnBoardingQABanner: React.FC<OnBoardingQABannerProps> = ({ data }) 
               <div key={index} className="flex flex-col items-center justify-center">
                 <button onClick={() => handleOpen(key)} className="border border-[#e5e7eb] mb-[0.6rem] w-full min-h-[3.75rem] shadow-[0_0_20px_rgba(0,0,0,.05)] flex text-2xl text-text-primary justify-between items-center cursor-pointer">
                   <div className="ml-6">{title}</div>
-                  <div className="w-12"><Image src={ArrowDown} className={` ${isActive ? 'rotate-180' : ''}`} alt="check mark icon" width={18} height={14} /></div>
+                  <div className="w-12"><Image src={ArrowDown} className={` ${isActive ? "rotate-180" : ""}`} alt="check mark icon" width={18} height={14} /></div>
                 </button>
                 {isActive && (
                   <div className="w-full">

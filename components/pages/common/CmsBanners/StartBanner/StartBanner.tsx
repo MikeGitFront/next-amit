@@ -3,7 +3,7 @@ import React from "react"
 import { StartBannerData } from "../../../../../lib/cms/types/page"
 import { Button } from "../../UI/Button"
 import { Container } from "../../UI/Container"
-import CheckMark from '../../../../icons/check-mark.png'
+import CheckMark from "../../../../icons/check-mark.png"
 
 type StartBannerProps = {
   data: StartBannerData
@@ -13,11 +13,11 @@ export const StartBanner: React.FC<StartBannerProps> = ({ data }) => {
   const { button, description, image, isReversed, items, title } = data
   return (
     <Container>
-      <div className={`flex flex-col gap-8 ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} mb-16`}>
-        <div className={`flex flex-col md:w-[50%] ${isReversed && 'md:pl-28'}`}>
+      <div className={`flex flex-col gap-8 ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} mb-16`}>
+        <div className={`flex flex-col md:w-[50%] ${isReversed && "md:pl-28"}`}>
           <div className="font-bold text-4xl md:text-[2.8rem] mb-2 font-secondary">{title}</div>
           <div className="block md:hidden md:w-[50%]">
-            <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={672} height={496} />
+            <Image src={image?.url || ""} alt={image?.alternativeText || ""} width={672} height={496} />
           </div>
           <h5 className="text-heading mb-6">{description}</h5>
           <div className="mb-4">
@@ -32,10 +32,10 @@ export const StartBanner: React.FC<StartBannerProps> = ({ data }) => {
               )
             })}
           </div>
-          <Button type={button?.buttonType} href={button?.href || ''}>{button?.label.toUpperCase()}</Button>
+          <Button type={button?.buttonType} href={button?.href || ""}>{button?.label.toUpperCase()}</Button>
         </div>
         <div className="hidden md:block md:w-[50%]">
-          <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={672} height={496} />
+          <Image src={image?.url || ""} alt={image?.alternativeText || ""} width={672} height={496} />
         </div>
       </div>
     </Container>

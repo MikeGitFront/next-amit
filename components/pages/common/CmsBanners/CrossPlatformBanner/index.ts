@@ -1,1 +1,1 @@
-export { CrossPlatformBanner } from './CrossPlatformBanner'
+export { CrossPlatformBanner } from "./CrossPlatformBanner"

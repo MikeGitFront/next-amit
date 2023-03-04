@@ -1,7 +1,7 @@
 import React from "react"
 import { ShowOffBannerData } from "../../../../../lib/cms"
 import { Container } from "../../UI/Container"
-import s from './ShowOffBanner.module.css'
+import s from "./ShowOffBanner.module.css"
 
 type ShowOffBannerProps = {
   data: ShowOffBannerData

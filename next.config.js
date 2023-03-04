@@ -4,7 +4,8 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      'localhost'
+      'localhost',
+      'https://next-amit-strapi-app.herokuapp.com/',
     ],
   }
 }

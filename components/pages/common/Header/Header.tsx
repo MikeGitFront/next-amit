@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
-import s from './Header.module.css'
-import { Image as ImageT, Link as LinkT, Button as ButtonT } from '../../../../lib/cms'
-import { Button } from '../UI/Button'
-import cn from 'clsx'
-import { useRouter } from 'next/router'
-import NavIcon from '../../../icons/nav.svg'
+import Image from "next/image"
+import Link from "next/link"
+import React, { useEffect, useState } from "react"
+import s from "./Header.module.css"
+import { Image as ImageT, Link as LinkT, Button as ButtonT } from "../../../../lib/cms"
+import { Button } from "../UI/Button"
+import cn from "clsx"
+import { useRouter } from "next/router"
+import NavIcon from "../../../icons/nav.svg"
 
 type HeaderProps = {
   headerInfo: {
@@ -37,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({ headerInfo, onOpenMobile }) => {
 
   return (
     <>
-      <header className={cn(s.wrapper, { 'shadow-[0_0_15px_rgba(0,0,0,.1)]': isShadow })}>
+      <header className={cn(s.wrapper, { "shadow-[0_0_15px_rgba(0,0,0,.1)]": isShadow })}>
         <button className='decoration-none xl:hidden' onClick={onOpenMobile}>
           <Image alt="navbar icon" width={27} height={18} src={NavIcon}></Image>
         </button>
@@ -53,14 +53,14 @@ export const Header: React.FC<HeaderProps> = ({ headerInfo, onOpenMobile }) => {
         </div>
         {pathname !== "/onboarding" && <div className={s.buttonsBlock}>
           {buttons.map((item, index) => (
-            <Button key={index} type={item.buttonType} href={item.href || ''}>{item.label}</Button>
+            <Button key={index} type={item.buttonType} href={item.href || ""}>{item.label}</Button>
           ))}
         </div>}
       </header>
       {pathname !== "/onboarding" && <div className='flex w-full xl:hidden justify-center bg-bg-gray-5 px-16 py-4'>
         <div className="flex gap-6 items-center justify-center flex-wrap">
           {buttons.map((item, index) => (
-            <Button key={index} type={item.buttonType} href={item.href || ''}>{item.label}</Button>
+            <Button key={index} type={item.buttonType} href={item.href || ""}>{item.label}</Button>
           ))}
         </div>
       </div>}

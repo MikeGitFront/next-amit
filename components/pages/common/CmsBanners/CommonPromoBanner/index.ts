@@ -1,1 +1,1 @@
-export { CommonPromoBanner } from './CommonPromoBanner'
+export { CommonPromoBanner } from "./CommonPromoBanner"

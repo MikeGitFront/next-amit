@@ -1,5 +1,5 @@
-import React from 'react'
-import { BlockType, PageBlock } from '../../../../lib/cms/types/page'
+import React from "react"
+import { BlockType, PageBlock } from "../../../../lib/cms/types/page"
 import {
   InfoBanner,
   ProjectsBanner,
@@ -29,7 +29,7 @@ import {
   CrossPlatformBanner,
   IntegrationBanner,
   ComponentsTableBanner
-} from '../CmsBanners'
+} from "../CmsBanners"
 
 type BlocksProps = {
   blocks: PageBlock[]

@@ -1,10 +1,10 @@
-import { getPageData } from '../../lib/page-data'
-import { getPageContentOperation } from '../../lib/cms/operations/get-page-content'
-import { CaseStudiesPage } from '../../components/pages'
-import { getStaticPagePathsOperation } from '../../lib/cms/operations/get-static-page-paths'
+import { getPageData } from "../../lib/page-data"
+import { getPageContentOperation } from "../../lib/cms/operations/get-page-content"
+import { CaseStudiesPage } from "../../components/pages"
+import { getStaticPagePathsOperation } from "../../lib/cms/operations/get-static-page-paths"
 
 export async function getStaticPaths() {
-  const { paths } = await getStaticPagePathsOperation('/case-studies')
+  const { paths } = await getStaticPagePathsOperation("/case-studies")
   return {
     paths: paths,
     fallback: false

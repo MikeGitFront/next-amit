@@ -1,1 +1,1 @@
-export { FactsBanner } from './FactsBanner'
+export { FactsBanner } from "./FactsBanner"

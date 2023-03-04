@@ -1,1 +1,1 @@
-export { OnBoardingCreateStoreBanner } from './OnBoardingCreateStoreBanner'
+export { OnBoardingCreateStoreBanner } from "./OnBoardingCreateStoreBanner"

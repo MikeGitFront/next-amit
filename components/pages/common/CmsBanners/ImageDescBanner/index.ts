@@ -1,1 +1,1 @@
-export { ImageDescBanner } from './ImageDescBanner'
+export { ImageDescBanner } from "./ImageDescBanner"

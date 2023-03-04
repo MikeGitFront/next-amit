@@ -2,10 +2,10 @@ import React, { useRef, useState } from "react"
 import { ReviewsBannerData } from "../../../../../lib/cms/types/page"
 import { Container } from "../../UI/Container"
 import Image from "next/image"
-import { useKeenSlider } from 'keen-slider/react'
-import s from './ReviewsBanner.module.css'
-import Quote from '../../../../icons/quote.svg'
-import cn from 'clsx'
+import { useKeenSlider } from "keen-slider/react"
+import s from "./ReviewsBanner.module.css"
+import Quote from "../../../../icons/quote.svg"
+import cn from "clsx"
 import { Arrow } from "../../../../icons/Arrow/Arrow"
 import { useScreenWidth } from "../../../../hooks/useScreenWidth"
 
@@ -66,7 +66,7 @@ export const ReviewsBanner: React.FC<ReviewsBannerProps> = ({ data }) => {
             return (
               <div key={index} className={cn(s.sliderItem, `width-[${100 / reviews.length}vw]`, `keen-slider__slide number-slide${index}`)}>
                 <div className={s.imageWrapper}>
-                  <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={100} height={100} style={{ borderRadius: '99999px' }} />
+                  <Image src={image?.url || ""} alt={image?.alternativeText || ""} width={100} height={100} style={{ borderRadius: "99999px" }} />
                 </div>
                 <div className="mb-2 ml-1">
                   <Image src={Quote} alt="quote" width={24} height={18} />

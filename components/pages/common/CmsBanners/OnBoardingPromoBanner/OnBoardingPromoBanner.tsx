@@ -3,7 +3,7 @@ import React from "react"
 import { OnBoardingPromoBannerData } from "../../../../../lib/cms"
 import { Button } from "../../UI/Button"
 import { Container } from "../../UI/Container"
-import s from './OnBoardingPromoBanner.module.css'
+import s from "./OnBoardingPromoBanner.module.css"
 
 export type OnBoardingPromoBannerProps = {
   data: OnBoardingPromoBannerData
@@ -18,14 +18,14 @@ export const OnBoardingPromoBanner: React.FC<OnBoardingPromoBannerProps> = ({ da
           <div className="text-text-primary mb-2 pb-4">{label}</div>
           <div className="text-5xl font-bold text-text-primary font-secondary max-w-[28rem] mb-2 pb-4">{title}</div>
           <div className="max-w-[24rem] mb-2 pb-4 text-heading">{description}</div>
-          <Button type={button?.buttonType} href={button?.href || ''}>{button?.label}</Button>
+          <Button type={button?.buttonType} href={button?.href || ""}>{button?.label}</Button>
         </div>
         <div className="md:w-[50%] mt-16 md:mt-0 relative flex flex-col items-center justify-center">
-         <Image className="static" src={mainImage?.url || ''} alt={mainImage?.alternativeText || ''} width={mainImage?.width} height={mainImage?.height} />
-         <Image className={s.bg} src={bgImage?.url || ''} alt={bgImage?.alternativeText || ''} width={bgImage?.width} height={bgImage?.height} />
+         <Image className="static" src={mainImage?.url || ""} alt={mainImage?.alternativeText || ""} width={mainImage?.width} height={mainImage?.height} />
+         <Image className={s.bg} src={bgImage?.url || ""} alt={bgImage?.alternativeText || ""} width={bgImage?.width} height={bgImage?.height} />
          {images?.map((image, index) => {
           return (
-            <Image key={index} className="absolute" src={image?.url || ''} alt={image?.alternativeText || ''} width={image?.width} height={image?.height} />
+            <Image key={index} className="absolute" src={image?.url || ""} alt={image?.alternativeText || ""} width={image?.width} height={image?.height} />
           )
          })}
         </div>

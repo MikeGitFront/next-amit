@@ -1,7 +1,7 @@
-import React from 'react'
-import { TitleBannerData } from '../../../../../lib/cms'
-import { Container } from '../../UI/Container'
-import s from './TitleBanner.module.css'
+import React from "react"
+import { TitleBannerData } from "../../../../../lib/cms"
+import { Container } from "../../UI/Container"
+import s from "./TitleBanner.module.css"
 
 
 type TitleBannerProps = {

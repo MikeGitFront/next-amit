@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { Icon, Link as LinkT } from '../../../../lib/cms'
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
+import { Icon, Link as LinkT } from "../../../../lib/cms"
 
-import s from './Footer.module.css'
+import s from "./Footer.module.css"
 
 type FooterProps = {
   footerInfo: {

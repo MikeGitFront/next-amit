@@ -1,9 +1,9 @@
-import React from 'react'
-import rehypeRaw from 'rehype-raw'
-import ReactMarkdown from 'react-markdown'
-import { HeadingBannerData } from '../../../../../lib/cms'
+import React from "react"
+import rehypeRaw from "rehype-raw"
+import ReactMarkdown from "react-markdown"
+import { HeadingBannerData } from "../../../../../lib/cms"
 import { Container } from "../../UI/Container"
-import s from './HeadingBanner.module.css'
+import s from "./HeadingBanner.module.css"
 
 export type HeadingBannerProps = {
   data: HeadingBannerData

@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from "react"
 import { OnBoardingFeaturesBannerData } from "../../../../../lib/cms"
 import { Container } from "../../UI/Container"
-import CheckMark from '../../../../icons/check-mark.png'
-import ArrowDown from '../../../../icons/arrow-down.svg'
+import CheckMark from "../../../../icons/check-mark.png"
+import ArrowDown from "../../../../icons/arrow-down.svg"
 import Image from "next/image"
 import { Button } from "../../UI/Button"
 
@@ -10,7 +10,7 @@ export type OnBoardingFeaturesBannerProps = {
   data: OnBoardingFeaturesBannerData
 }
 
-const BUTTONS_AMOUNT = ['0', '0', '0'].fill('GET A QUOTE' as never, 0, 3) as string[]
+const BUTTONS_AMOUNT = ["0", "0", "0"].fill("GET A QUOTE" as never, 0, 3) as string[]
 
 export const OnBoardingFeaturesBanner: React.FC<OnBoardingFeaturesBannerProps> = ({ data }) => {
   const { description, title, headers, rows } = data
@@ -36,7 +36,7 @@ export const OnBoardingFeaturesBanner: React.FC<OnBoardingFeaturesBannerProps> =
         {tabData.map(([title, text]) => (
           <>
             <div className="min-h-[3rem] flex justify-start pb-4 pt-3 border-b-[1px] border-gray-6">{title}</div>
-            <div className="min-h-[3rem] flex items-center justify-end text-right border-b-[1px] border-gray-6">{text === 'yes' ? <Image src={CheckMark} alt="check mark icon" width={18} height={14} /> : text}</div>
+            <div className="min-h-[3rem] flex items-center justify-end text-right border-b-[1px] border-gray-6">{text === "yes" ? <Image src={CheckMark} alt="check mark icon" width={18} height={14} /> : text}</div>
           </>
         ))}
         <div className="flex items-center col-span-2 justify-center mt-4 min-h-[3rem]"><Button href="/contact-us" type="primary">GET A QUOTE</Button></div>
@@ -56,8 +56,8 @@ export const OnBoardingFeaturesBanner: React.FC<OnBoardingFeaturesBannerProps> =
             )
           })}
           {rows.map(({ items }) => items.map((item, index) =>
-            <div key={index} className={`border px-1 flex items-center ${index % 4 === 0 && 'font-semibold'} justify-${index % 4 !== 0 ? 'center' : 'start'} min-h-[3rem] border-gray-6`}>
-              {item === 'yes' ? <Image src={CheckMark} alt="check mark icon" width={18} height={14} /> : item}
+            <div key={index} className={`border px-1 flex items-center ${index % 4 === 0 && "font-semibold"} justify-${index % 4 !== 0 ? "center" : "start"} min-h-[3rem] border-gray-6`}>
+              {item === "yes" ? <Image src={CheckMark} alt="check mark icon" width={18} height={14} /> : item}
             </div>))}
           <div className="col-span-1 min-h-[3rem]"></div>
           {BUTTONS_AMOUNT.map(text => <div className="flex items-center justify-center mt-4 col-span-1 min-h-[3rem]"><Button href="/contact-us" type="primary">{text}</Button></div>)}
@@ -68,7 +68,7 @@ export const OnBoardingFeaturesBanner: React.FC<OnBoardingFeaturesBannerProps> =
               <div key={index} className="flex flex-col items-center justify-center mb-[0.6rem]">
                 <button onClick={() => handleOpen(key)} className="border border-[#e5e7eb] w-full min-h-[3.75rem] shadow-[0_0_20px_rgba(0,0,0,.05)] flex text-2xl text-text-primary justify-between items-center cursor-pointer">
                   <div className="ml-6">{name}</div>
-                  <div className="w-12"><Image src={ArrowDown} className={` ${isActive ? 'rotate-180' : ''}`} alt="check mark icon" width={18} height={14} /></div>
+                  <div className="w-12"><Image src={ArrowDown} className={` ${isActive ? "rotate-180" : ""}`} alt="check mark icon" width={18} height={14} /></div>
                 </button>
                 {isActive && (
                   mobileTabData(name)

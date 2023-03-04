@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from "react"
 import { ComponentsTableBannerData } from "../../../../../lib/cms"
 import { Container } from "../../UI/Container"
-import CheckMark from '../../../../icons/check-mark.png'
-import ArrowDown from '../../../../icons/arrow-down.svg'
+import CheckMark from "../../../../icons/check-mark.png"
+import ArrowDown from "../../../../icons/arrow-down.svg"
 import Image from "next/image"
 import { Button } from "../../UI/Button"
 
@@ -51,7 +51,7 @@ export const ComponentsTableBanner: React.FC<ComponentsTableBannerProps> = ({ da
             )
           })}
           {rows.map(({ items }) => items.map((item, index) =>
-            <div key={index} className={`border px-1 flex items-center justify-center min-h-[3rem] border-gray-6`}>
+            <div key={index} className={"border px-1 flex items-center justify-center min-h-[3rem] border-gray-6"}>
               {item}
             </div>))}
         </div>
@@ -61,7 +61,7 @@ export const ComponentsTableBanner: React.FC<ComponentsTableBannerProps> = ({ da
               <div key={index} className="flex flex-col items-center justify-center mb-[0.6rem]">
                 <button onClick={() => handleOpen(key)} className="border border-[#e5e7eb] w-full min-h-[3.75rem] shadow-[0_0_20px_rgba(0,0,0,.05)] flex text-2xl text-text-primary justify-between items-center cursor-pointer">
                   <div className="ml-4 max-w-[75%] sm:ml-6">{name}</div>
-                  <div className="w-12"><Image src={ArrowDown} className={` ${isActive ? 'rotate-180' : ''}`} alt="check mark icon" width={18} height={14} /></div>
+                  <div className="w-12"><Image src={ArrowDown} className={` ${isActive ? "rotate-180" : ""}`} alt="check mark icon" width={18} height={14} /></div>
                 </button>
                 {isActive && (
                   mobileTabData(name)

@@ -22,7 +22,7 @@ export const OnBoardingChooseBanner: React.FC<OnBoardingChooseBannerProps> = ({ 
             return (
               <div key={index} className={`w-[${100 / items.length}%] col-span-1 flex flex-col items-center text-center justify-start`}>
                 <div className="w-[50px] h-[70px]">
-                  <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={50} height={50} />
+                  <Image src={image?.url || ""} alt={image?.alternativeText || ""} width={50} height={50} />
                 </div>
                 <div className="text-heading w-[9rem] text-center">{title}</div>
               </div>

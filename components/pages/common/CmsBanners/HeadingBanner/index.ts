@@ -1,1 +1,1 @@
-export { HeadingBanner } from './HeadingBanner'
+export { HeadingBanner } from "./HeadingBanner"

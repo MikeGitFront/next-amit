@@ -3,7 +3,7 @@ import React from "react"
 import { PromoBannerData } from "../../../../../lib/cms/types/page"
 import { Button } from "../../UI/Button"
 
-import s from './PromoBanner.module.css'
+import s from "./PromoBanner.module.css"
 
 type PromoBannerProps = {
   data: PromoBannerData
@@ -21,7 +21,7 @@ export const PromoBanner: React.FC<PromoBannerProps> = ({ data }) => {
           <Button type={button?.buttonType} href={button?.href}>{button?.label.toUpperCase()}</Button>
         </div>
         <div className="absolute z-10 bottom-0 right-0">
-          <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={512} height={300} />
+          <Image src={image?.url || ""} alt={image?.alternativeText || ""} width={512} height={300} />
         </div>
       </div>
     </div>

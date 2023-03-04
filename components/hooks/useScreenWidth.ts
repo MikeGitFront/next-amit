@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react' 
+import { useEffect, useState } from "react" 
  
 enum tailWidthValue { 
   sm = 640, 
@@ -35,11 +35,11 @@ export const useScreenWidth = () => {
       }  
     } 
  
-    window.addEventListener('resize', changeWindowSize) 
+    window.addEventListener("resize", changeWindowSize) 
     changeWindowSize() 
  
     return () => { 
-      window.removeEventListener('resize', changeWindowSize) 
+      window.removeEventListener("resize", changeWindowSize) 
     } 
   }, []) 
  

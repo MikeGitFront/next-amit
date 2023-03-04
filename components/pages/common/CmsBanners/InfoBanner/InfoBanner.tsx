@@ -4,7 +4,7 @@ import { InfoBannerData } from "../../../../../lib/cms/types/page"
 import { Button } from "../../UI/Button"
 import { Container } from "../../UI/Container"
 
-import s from './InfoBanner.module.css'
+import s from "./InfoBanner.module.css"
 
 type InfoBannerProps = {
   data: InfoBannerData
@@ -20,7 +20,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({ data }) => {
         <Button type={button?.buttonType} href={button?.href}>{button?.label}</Button >
       </div>
       <div className={s.images}>
-        <Image src={mainImage?.url || ''} alt={mainImage?.alternativeText || ''} width={400} height={260} />
+        <Image src={mainImage?.url || ""} alt={mainImage?.alternativeText || ""} width={400} height={260} />
       </div>
     </div>
   </Container>

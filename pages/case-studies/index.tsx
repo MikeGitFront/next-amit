@@ -1,11 +1,11 @@
-import { getPageData } from '../../lib/page-data'
-import { getPageContentOperation } from '../../lib/cms/operations/get-page-content'
-import { CaseStudiesPage } from '../../components/pages'
+import { getPageData } from "../../lib/page-data"
+import { getPageContentOperation } from "../../lib/cms/operations/get-page-content"
+import { CaseStudiesPage } from "../../components/pages"
 
 export async function getStaticProps() {
   const { header, footer } = await getPageData()
 
-  const { blocks, title } = await getPageContentOperation('/case-studies')
+  const { blocks, title } = await getPageContentOperation("/case-studies")
 
   return {
     props: {

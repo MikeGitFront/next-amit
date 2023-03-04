@@ -4,7 +4,7 @@ import React, { FormEvent } from "react"
 import { ContactUsInfoBannerData } from "../../../../../lib/cms"
 import { Button } from "../../UI/Button"
 import { Container } from "../../UI/Container"
-import s from './ContactUsInfoBanner.module.css'
+import s from "./ContactUsInfoBanner.module.css"
 
 export type ContactUsInfoBannerProps = {
   data: ContactUsInfoBannerData
@@ -40,7 +40,7 @@ export const ContactUsInfoBanner: React.FC<ContactUsInfoBannerProps> = ({ data }
             </label>
             <label className="col-span-2">
               <span className={s.label}>Your Message *</span>
-              <textarea style={{ minHeight: '100px'}} placeholder="Type your message here..." className={s.input} name="name" />
+              <textarea style={{ minHeight: "100px"}} placeholder="Type your message here..." className={s.input} name="name" />
             </label>
             <div className="col-span-2 text-heading">Required fields are marked *</div>
             <div className={s.file}>
@@ -66,7 +66,7 @@ export const ContactUsInfoBanner: React.FC<ContactUsInfoBannerProps> = ({ data }
                 return (
                   <div key={index} className="flex gap-8 py-3">
                     <div className="w-8 h-8">
-                      <Image src={image?.url || ''} style={{ objectFit: 'contain' }} alt={image?.alternativeText || ''} width={32} height={32} />
+                      <Image src={image?.url || ""} style={{ objectFit: "contain" }} alt={image?.alternativeText || ""} width={32} height={32} />
                     </div>
                     <div className="flex flex-col">
                       <div className="font-bold text-text-primary">{title}</div>

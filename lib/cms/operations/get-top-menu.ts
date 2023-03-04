@@ -1,5 +1,5 @@
 import { fetchGraphqlStrapi } from "../client"
-import { GetTopMenuQuery } from '../../../generated/schema'
+import { GetTopMenuQuery } from "../../../generated/schema"
 import { getTopMenuQuery } from "../queries/get-top-menu"
 import { normalizeButton, normalizeImage } from "../utils/shared"
 

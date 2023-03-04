@@ -11,10 +11,10 @@ type Variables = {
 }
 
 export const fetchGraphqlStrapi = async <T extends any>(query: string, variables?: Variables): Promise<T> => {
-  const res = await fetch(process.env.STRAPI_API_URL || '', {
-    method: 'POST',
+  const res = await fetch(process.env.STRAPI_API_URL || "", {
+    method: "POST",
     headers: {
-      "authorization": `bearer ${process.env.STRAPI_API_TOKEN}` || '',
+      "authorization": `bearer ${process.env.STRAPI_API_TOKEN}` || "",
       "Content-type": "application/json",
     },
     body: JSON.stringify({
