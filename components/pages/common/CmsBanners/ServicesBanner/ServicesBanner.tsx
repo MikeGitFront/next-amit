@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown"
 import rehypeRaw from 'rehype-raw'
 import { ServicesBannerData } from "../../../../../lib/cms/types/page"
 import cn from 'clsx'
-import s from './Servicesbanner.module.css'
+import s from './ServicesBanner.module.css'
 import { Container } from "../../UI/Container"
 import { useScreenWidth } from "../../../../hooks/useScreenWidth"
 
