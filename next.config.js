@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     domains: [
       'localhost',
-      'https://next-amit-strapi-app.herokuapp.com/',
+      'https://next-amit-strapi-app.herokuapp.com',
     ],
   }
 }
