@@ -10,13 +10,19 @@ type Variables = {
   parentPath?: string
 }
 
-export const fetchGraphqlStrapi = async <T extends any>(query: string, variables?: Variables ): Promise<T> => {
-  const { data } = await client.query<T>({
-    query: gql`
-        ${query}
-        `,
-    variables,
+export const fetchGraphqlStrapi = async <T extends any>(query: string, variables?: Variables): Promise<T> => {
+  const res = await fetch(process.env.STRAPI_API_URL || '', {
+    method: 'POST',
+    headers: {
+      "authorization": `bearer ${process.env.STRAPI_API_TOKEN}` || '',
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      query, variables,
+    })
   })
 
-  return data
+  const json = await res.json()
+
+  return json.data
 }
