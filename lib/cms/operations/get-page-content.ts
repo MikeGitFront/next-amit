@@ -25,6 +25,6 @@ export const getPageContentOperation = async (path: string) => {
 
   return {
     blocks: content.map(item => contentHandler.normalizeBlock(item)),
-    title,
+    title: title || null,
   }
 }
