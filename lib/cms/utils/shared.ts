@@ -14,19 +14,19 @@ export const normalizeButton = (button: Omit<ComponentCommonButton, 'id'>| null 
 
 export const normalizeImage = (image: any): Image => ({
   url: `${process.env.STRAPI_FILE_URL}${image?.data?.attributes?.url || ''}`,
-  alternativeText: image.data?.attributes?.alternativeText || '',
-  width: image.data?.attributes?.width || 0,
-  height: image.data?.attributes?.height || 0,
+  alternativeText: image?.data?.attributes?.alternativeText || '',
+  width: image?.data?.attributes?.width || 0,
+  height: image?.data?.attributes?.height || 0,
 })
 
 export const normalizeImages = (image: any): Image => ({
   url: `${process.env.STRAPI_FILE_URL}${image?.attributes?.url || ''}`,
-  alternativeText: image.attributes?.alternativeText || '',
-  width: image.attributes?.width || 0,
+  alternativeText: image?.attributes?.alternativeText || '',
+  width: image?.attributes?.width || 0,
   height: image?.attributes?.height || 0,
 })
 
 export const normalizeLink = (link: Omit<ComponentCommonLink, 'id'>): Link => ({
-  label: link.label || '',
-  href: link.href || '',
+  label: link?.label || '',
+  href: link?.href || '',
 })
