@@ -20,7 +20,7 @@ export const CommonPromoBanner: React.FC<CommonPromoBannerProps> = ({ data }) =>
         <div className={s.bg}>
           <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={image?.width} height={image?.height} />
         </div>
-        <div className="flex flex-col items-center min-h-[15rem] pt-8 px-6 gap-4">
+        <div className="flex flex-col items-center min-h-[15rem] pt-8 px-6 gap-4 pb-8 md:pb-0 text-center">
           <div className="font-bold font-secondary text-text-primary text-[2.8rem]">{title}</div>
           <div className="text-heading text-center"><ReactMarkdown rehypePlugins={[rehypeRaw]}>{description}</ReactMarkdown></div>
           <Button href={button?.href} type={button?.buttonType}>{button?.label}</Button>

@@ -1,5 +1,5 @@
 .textBlock {
-  @apply w-[50%];
+  @apply w-full md:w-[50%];
 }
 
 .textItem {

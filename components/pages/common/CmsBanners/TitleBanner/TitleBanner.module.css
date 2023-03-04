@@ -1,5 +1,5 @@
 .title {
-  @apply my-20 mx-4 font-secondary font-bold text-[2.8rem] pb-8 relative;
+  @apply my-20 mx-4 font-secondary font-bold text-4xl md:text-[2.8rem] pb-8 relative;
 }
 
 .title::before {

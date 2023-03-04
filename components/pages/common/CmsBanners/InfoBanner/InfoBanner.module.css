@@ -1,5 +1,5 @@
 .images {
-  @apply w-[58.333%] h-[22rem] flex items-center justify-center;
+  @apply w-full md:w-[58.333%] h-[22rem] flex items-center justify-center;
 }
 
 @media (min-width: 640px) {

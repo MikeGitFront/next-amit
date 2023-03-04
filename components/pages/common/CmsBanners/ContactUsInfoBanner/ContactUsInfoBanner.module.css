@@ -3,7 +3,7 @@
 }
 
 .formWrapper {
-  @apply flex flex-col mr-24;
+  @apply flex flex-col md:mr-24;
 }
 
 .label {

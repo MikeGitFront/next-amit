@@ -18,24 +18,27 @@ export const AboutBanner: React.FC<AboutBannerProps> = ({ data }) => {
 
   return (
     <Container>
-      <div className={`flex relative py-16 ${isReversed ? 'flex-row-reverse' : 'flex-row'} ${isDarkTheme ? 'bg-bg-primary' : 'bg-[#fff]'}`}>
+      <div className={`flex flex-col md:flex-row relative py-16 ${isReversed ? 'flex-row-reverse' : 'flex-row'} ${isDarkTheme ? 'bg-bg-primary' : 'bg-[#fff]'}`}>
         {isDarkTheme && <div className={s.bgBlock} />}
-        <div className={cn(s.textBlock, `${isReversed && 'pl-36 pr-0'}`)}>
-          <div className={`font-bold text-[2.8rem] font-secondary ${isDarkTheme ? 'text-[#fff]' : 'text-[#000]'}`}>
+        <div className={cn(s.textBlock, `${isReversed && 'md:pl-36 pr-0'}`)}>
+          <div className={`font-bold text-4xl md:text-[2.8rem] font-secondary ${isDarkTheme ? 'text-[#fff]' : 'text-[#000]'}`}>
             {title}
+          </div>
+          <div className="block md:hidden w-full">
+            <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={1440} height={306} />
           </div>
           <div className="text-heading pb-6">{description}</div>
           <div className="flex flex-wrap">
             {items.map(({ item }, index) => {
               return (
-                <div key={index} className={cn(s.textItem, `${isDarkTheme ? 'text-[#fff]' : 'text-text-primary'} ${items.length > 1 && 'w-[50%]'}`)}>
+                <div key={index} className={cn(s.textItem, `${isDarkTheme ? 'text-[#fff]' : 'text-text-primary'} ${items.length > 1 && 'w-[45%] md:w-[50%]'}`)}>
                   <ReactMarkdown rehypePlugins={[rehypeRaw]}>{item}</ReactMarkdown>
                 </div>
               )
             })}
           </div>
         </div>
-        <div className="w-[50%]">
+        <div className="hidden md:block w-[50%]">
           <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={1440} height={306} />
         </div>
       </div>

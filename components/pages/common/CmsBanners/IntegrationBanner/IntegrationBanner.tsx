@@ -15,13 +15,16 @@ export const IntegrationBanner: React.FC<IntegrationBannerProps> = ({ data }) =>
   return (
     <Container>
       <div className='flex py-8 gap-8'>
-        <div className='flex flex-col w-[50%]'>
+        <div className='flex flex-col md:w-[50%]'>
           <div className='mb-5 text-text-primary font-semibold text-[1.75rem]'>{title}</div>
+          <div className='md:hidden block'>
+            <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={image?.width} height={image?.height} />
+          </div>
           <div className={s.desc}>
             <ReactMarkdown rehypePlugins={[rehypeRaw]}>{description}</ReactMarkdown>
           </div>
         </div>
-        <div className='w-[50%]'>
+        <div className='hidden md:block w-[50%]'>
           <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={image?.width} height={image?.height} />
         </div>
       </div>

@@ -15,14 +15,15 @@ export const CrossPlatformBanner: React.FC<CrossPlatformBannerProps> = ({ data }
   return (
     <Container>
       <div className='flex my-8 gap-8'>
-        <div className='flex flex-col w-[50%]'>
+        <div className='flex flex-col md:w-[50%]'>
           <div className='mb-5 text-2xl font-semibold'>{title}</div>
-          <div className={s.desc}><ReactMarkdown rehypePlugins={[rehypeRaw]}>{description}</ReactMarkdown></div>
-        </div>
-        <div className='w-[50%]'>
-          <div >
+          <div className='block md:hidden'>
             <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={image?.width} height={image?.height} />
           </div>
+          <div className={s.desc}><ReactMarkdown rehypePlugins={[rehypeRaw]}>{description}</ReactMarkdown></div>
+        </div>
+        <div className='hidden md:block md:w-[50%]'>
+          <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={image?.width} height={image?.height} />
         </div>
       </div>
     </Container>

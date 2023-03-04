@@ -1,5 +1,5 @@
 .heading {
-  @apply flex items-center justify-center relative w-[65%] text-[20px] pt-8 my-7;
+  @apply flex items-center justify-center relative text-center w-[90%] md:w-[65%] text-[20px] pt-8 my-7;
 }
 
 .heading::before {

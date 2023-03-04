@@ -13,14 +13,14 @@ export const OnBoardingPromoBanner: React.FC<OnBoardingPromoBannerProps> = ({ da
   const { button, description, title, bgImage, images, label, mainImage } = data
   return (
     <Container>
-      <div className="my-8 flex min-h-[428px]">
-        <div className="flex flex-col justify-center w-[50%]">
+      <div className="my-8 flex flex-col md:flex-row min-h-[428px]">
+        <div className="flex flex-col justify-center md:w-[50%]">
           <div className="text-text-primary mb-2 pb-4">{label}</div>
           <div className="text-5xl font-bold text-text-primary font-secondary max-w-[28rem] mb-2 pb-4">{title}</div>
           <div className="max-w-[24rem] mb-2 pb-4 text-heading">{description}</div>
           <Button type={button?.buttonType} href={button?.href || ''}>{button?.label}</Button>
         </div>
-        <div className="w-[50%] relative flex flex-col items-center justify-center">
+        <div className="md:w-[50%] mt-16 md:mt-0 relative flex flex-col items-center justify-center">
          <Image className="static" src={mainImage?.url || ''} alt={mainImage?.alternativeText || ''} width={mainImage?.width} height={mainImage?.height} />
          <Image className={s.bg} src={bgImage?.url || ''} alt={bgImage?.alternativeText || ''} width={bgImage?.width} height={bgImage?.height} />
          {images?.map((image, index) => {

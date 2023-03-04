@@ -16,12 +16,12 @@ export const ContactUsInfoBanner: React.FC<ContactUsInfoBannerProps> = ({ data }
 
   return (
     <Container>
-      <div className="grid grid-cols-[auto_minmax(150px,450px)] gap-16">
+      <div className="lg:grid grid-cols-[auto_minmax(150px,450px)] flex flex-col gap-16">
         <div className={s.formWrapper}>
           <div className="text-heading pb-6 mt-2">Get in touch with us for any inquiries. We will contact you back as soon as possible</div>
           <form onSubmit={(e: FormEvent<HTMLFormElement>) => {
             e.preventDefault()
-          }} className="grid grid-cols-[1fr_1fr] gap-x-8 gap-y-2">
+          }} className="md:grid flex flex-col md:grid-cols-[1fr_1fr] gap-x-8 gap-y-2">
             <label>
               <span className={s.label}>Name *</span>
               <input type="text" className={s.input} name="name" />
@@ -40,7 +40,7 @@ export const ContactUsInfoBanner: React.FC<ContactUsInfoBannerProps> = ({ data }
             </label>
             <label className="col-span-2">
               <span className={s.label}>Your Message *</span>
-              <textarea placeholder="Type your message here..." className={s.input} name="name" />
+              <textarea style={{ minHeight: '100px'}} placeholder="Type your message here..." className={s.input} name="name" />
             </label>
             <div className="col-span-2 text-heading">Required fields are marked *</div>
             <div className={s.file}>

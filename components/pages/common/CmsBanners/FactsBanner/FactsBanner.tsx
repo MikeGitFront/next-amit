@@ -16,7 +16,7 @@ export const FactsBanner: React.FC<FactsBannerProps> = ({ data }) => {
       <div className={s.wrapper}>
         {items.map(({ description, image, title }, index) => {
           return (
-            <div key={index} className={`w-[25%] flex flex-col items-center justify-start`}>
+            <div key={index} className={`w-[45%] md:w-[25%] mt-4 md:mt-0 flex flex-col items-center justify-start`}>
               <div className="w-[70px] h-[70px]">
                 <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={70} height={70} />
               </div>

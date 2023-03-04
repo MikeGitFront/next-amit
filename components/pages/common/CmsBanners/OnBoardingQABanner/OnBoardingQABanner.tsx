@@ -9,7 +9,7 @@ export type OnBoardingQABannerProps = {
 }
 
 export const OnBoardingQABanner: React.FC<OnBoardingQABannerProps> = ({ data }) => {
-  const [itemsState, setItemsState] = useState(data.items.map((item, index) => ({ key: index, isActive: false, ...item })))
+  const [itemsState, setItemsState] = useState(() => data.items.map((item, index) => ({ key: index, isActive: false, ...item })))
   const { title } = data
 
   const handleOpen = useCallback((key: number) => {
@@ -23,7 +23,7 @@ export const OnBoardingQABanner: React.FC<OnBoardingQABannerProps> = ({ data }) 
   return (
     <Container>
       <div className="pb-20">
-        <div className="text-center font-bold font-secondary text-[2.8rem] pb-5">{title}</div>
+        <div className="text-center font-bold font-secondary text-4xl md:text-[2.8rem] pb-5">{title}</div>
         <div>
           {itemsState.map(({ isActive, description, image, title, key }, index) => {
             return (

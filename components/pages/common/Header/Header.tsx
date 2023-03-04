@@ -57,13 +57,13 @@ export const Header: React.FC<HeaderProps> = ({ headerInfo, onOpenMobile }) => {
           ))}
         </div>}
       </header>
-      <div className='flex w-full xl:hidden justify-center bg-bg-gray-5 px-16 py-4'>
-        {pathname !== "/onboarding" && <div className="flex gap-6 items-center justify-center flex-wrap">
+      {pathname !== "/onboarding" && <div className='flex w-full xl:hidden justify-center bg-bg-gray-5 px-16 py-4'>
+        <div className="flex gap-6 items-center justify-center flex-wrap">
           {buttons.map((item, index) => (
             <Button key={index} type={item.buttonType} href={item.href || ''}>{item.label}</Button>
           ))}
-        </div>}
-      </div>
+        </div>
+      </div>}
     </>
   )
 }
