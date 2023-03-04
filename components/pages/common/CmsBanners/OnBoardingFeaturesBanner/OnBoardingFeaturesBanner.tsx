@@ -60,7 +60,7 @@ export const OnBoardingFeaturesBanner: React.FC<OnBoardingFeaturesBannerProps> =
               {item === "yes" ? <Image src={CheckMark} alt="check mark icon" width={18} height={14} /> : item}
             </div>))}
           <div className="col-span-1 min-h-[3rem]"></div>
-          {BUTTONS_AMOUNT.map(text => <div className="flex items-center justify-center mt-4 col-span-1 min-h-[3rem]"><Button href="/contact-us" type="primary">{text}</Button></div>)}
+          {BUTTONS_AMOUNT.map((text, index) => <div key={index} className="flex items-center justify-center mt-4 col-span-1 min-h-[3rem]"><Button href="/contact-us" type="primary">{text}</Button></div>)}
         </div>
         <div className="w-full md:hidden">
           {mobileHeaders.map(({ isActive, name, key }, index) => {

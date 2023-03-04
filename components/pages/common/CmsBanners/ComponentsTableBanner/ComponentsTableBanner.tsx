@@ -33,7 +33,7 @@ export const ComponentsTableBanner: React.FC<ComponentsTableBannerProps> = ({ da
     return (
       <div className="grid grid-cols-[1fr] px-4 py-2 border border-gray-6 w-full">
         {tabData.map((text) => (
-            <div className="min-h-[3rem] flex justify-start pb-4 pt-3 border-b-[1px] border-gray-6">{text}</div>
+            <div key={text} className="min-h-[3rem] flex justify-start pb-4 pt-3 border-b-[1px] border-gray-6">{text}</div>
         ))}
       </div>
     )
