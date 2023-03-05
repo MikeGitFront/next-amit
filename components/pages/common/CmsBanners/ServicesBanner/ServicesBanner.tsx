@@ -86,7 +86,7 @@ export const ServicesBanner: React.FC<ServicesBannerProps> = ({ data }) => {
                 key={index}
                 className={cn(
                   s.headingItem,
-                  `${selectedTab === title ? 'bg-[#dbd8d7] before:content-[""]' : 'bg-[#fff]'}`
+                  `${selectedTab === title ? 'bg-[#dbd8d7] before:content-[""]' : 'bg-white'}`
                 )}
                 onClick={() => handleOpenTab(title)}
               >
@@ -101,7 +101,7 @@ export const ServicesBanner: React.FC<ServicesBannerProps> = ({ data }) => {
                 </div>
                 <div
                   className={`text-xl font-medium w-[70%] ${
-                    selectedTab === title ? 'text-[#fff]' : 'text-text-primary'
+                    selectedTab === title ? 'text-white' : 'text-text-primary'
                   }`}
                 >
                   {title}

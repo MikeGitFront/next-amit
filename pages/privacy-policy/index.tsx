@@ -1,6 +1,5 @@
 import { getPageData } from '../../lib/page-data'
-import { getPageContentOperation } from '../../lib/cms/operations/get-page-content'
-import { PrivacyPolicyPage } from '../../components/pages'
+import { PrivacyPolicyPage } from '../../components'
 import { getPrivacyPolicyOpertion } from '../../lib/cms/operations/get-privacy-policy'
 
 export async function getStaticProps() {

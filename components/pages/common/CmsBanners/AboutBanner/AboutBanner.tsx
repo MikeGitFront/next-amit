@@ -20,14 +20,14 @@ export const AboutBanner: React.FC<AboutBannerProps> = ({ data }) => {
     <Container>
       <div
         className={`flex flex-col md:flex-row relative py-16 ${isReversed ? 'flex-row-reverse' : 'flex-row'} ${
-          isDarkTheme ? 'bg-bg-primary' : 'bg-[#fff]'
+          isDarkTheme ? 'bg-bg-primary' : 'bg-white'
         }`}
       >
         {isDarkTheme && <div className={s.bgBlock} />}
         <div className={cn(s.textBlock, `${isReversed && 'md:pl-36 pr-0'}`)}>
           <div
             className={`font-bold text-4xl md:text-[2.8rem] font-secondary ${
-              isDarkTheme ? 'text-[#fff]' : 'text-[#000]'
+              isDarkTheme ? 'text-white' : 'text-[#000]'
             }`}
           >
             {title}
@@ -43,7 +43,7 @@ export const AboutBanner: React.FC<AboutBannerProps> = ({ data }) => {
                   key={index}
                   className={cn(
                     s.textItem,
-                    `${isDarkTheme ? 'text-[#fff]' : 'text-text-primary'} ${items.length > 1 && 'w-[45%] md:w-[50%]'}`
+                    `${isDarkTheme ? 'text-white' : 'text-text-primary'} ${items.length > 1 && 'w-[45%] md:w-[50%]'}`
                   )}
                 >
                   <ReactMarkdown rehypePlugins={[rehypeRaw]}>{item}</ReactMarkdown>

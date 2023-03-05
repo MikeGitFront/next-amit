@@ -19,7 +19,7 @@ export const BlogBanner: React.FC<BlogBannerProps> = ({ data }) => {
             key={index}
             className={`md:w-[calc(33.3%-2rem)] shadow-[0_0_15px_rgba(0,0,0,.1)] max-w-[440px] flex flex-col self-stretch justify-start w-[${
               100 / items.length
-            }%] bg-[#fff]`}
+            }%] bg-white`}
           >
             <Link href={link?.href || ''}>
               <div>

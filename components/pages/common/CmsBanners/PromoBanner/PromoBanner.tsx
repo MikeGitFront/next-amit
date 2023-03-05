@@ -14,12 +14,12 @@ export const PromoBanner: React.FC<PromoBannerProps> = ({ data }) => {
   return (
     <div className={s.wrapper}>
       <div className={s.content}>
-        <div className="absolute left-[8%] -top-10 w-20 h-20 rounded-full flex items-center justify-center text-[#fff] uppercase text-2xl bg-[#89c12c]">
+        <div className="absolute left-[8%] animate-bounce -top-10 w-20 h-20 rounded-full flex items-center justify-center text-white uppercase text-2xl bg-[#89c12c]">
           {advertisementLabel}
         </div>
         <div className="flex flex-col">
-          <div className="text-[2.8rem] text-[#fff] font-bold mb-2">{title}</div>
-          <div className="text-base pb-4 text-[#fff]">{description}</div>
+          <div className="text-[2.8rem] text-white font-bold mb-2">{title}</div>
+          <div className="text-base pb-4 text-white">{description}</div>
           <Button type={button?.buttonType} href={button?.href}>
             {button?.label.toUpperCase()}
           </Button>

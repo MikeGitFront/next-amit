@@ -11,14 +11,14 @@ export type OnBoardingFeaturesBannerProps = {
 }
 
 const BUTTONS_AMOUNT = ['0', '0', '0'].fill('GET A QUOTE' as never, 0, 3) as string[]
+const getBgColor = ['#fff4cc', '#e9f5ff', '#def4e4']
 
 export const OnBoardingFeaturesBanner: React.FC<OnBoardingFeaturesBannerProps> = ({ data }) => {
   const { description, title, headers, rows } = data
 
   const [mobileHeaders, setMobileHeaders] = useState(() =>
-    headers.map((item, index) => ({ key: index, isActive: false, name: item }))
+    headers.map((item, index) => ({ key: index, isActive: false, name: item, bgColor: getBgColor[index] }))
   )
-
   const handleOpen = useCallback((key: number) => {
     setMobileHeaders((prev) => {
       const previousData = [...prev]
@@ -89,13 +89,15 @@ export const OnBoardingFeaturesBanner: React.FC<OnBoardingFeaturesBannerProps> =
           ))}
         </div>
         <div className="w-full md:hidden">
-          {mobileHeaders.map(({ isActive, name, key }, index) => {
+          {mobileHeaders.map(({ isActive, name, key, bgColor }, index) => {
+            console.log(index, bgColor)
             return (
               <div key={index} className="flex flex-col items-center justify-center mb-[0.6rem]">
                 <button
                   onClick={() => handleOpen(key)}
-                  className="border border-[#e5e7eb] w-full min-h-[3.75rem] shadow-[0_0_20px_rgba(0,0,0,.05)] flex text-2xl text-text-primary justify-between items-center cursor-pointer"
+                  className="border border-[#e5e7eb] w-full min-h-[3.75rem] shadow-[0_0_20px_rgba(0,0,0,.05)] flex text-2xl text-text-primary justify-between items-center cursor-pointer relative transition-all"
                 >
+                  <div className={`absolute bg-[${bgColor}] left-0 top-0 h-full transition-all duration-700 -z-10 ${isActive ? 'w-full' : 'w-[19%]'} `}></div>
                   <div className="ml-6">{name}</div>
                   <div className="w-12">
                     <Image

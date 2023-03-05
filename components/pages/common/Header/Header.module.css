@@ -1,5 +1,5 @@
 .wrapper {
-  @apply bg-[#fff] z-10 sticky flex justify-between h-[4rem] w-full sm:h-[6rem] px-5 top-0 items-center;
+  @apply bg-white z-[100] sticky flex justify-between h-[4rem] w-full sm:h-[6rem] px-5 top-0 items-center;
 }
 
 .buttonsBlock {

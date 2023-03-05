@@ -18,7 +18,7 @@ const OnBoardingStartPage = () => {
           }}
           className={s.form}
         >
-          <div className="shadow-[0_0_15px_rgba(0,0,0,.15)] p-6 grid gap-y-4 bg-[#fff]">
+          <div className="shadow-[0_0_15px_rgba(0,0,0,.15)] p-6 grid gap-y-4 bg-white">
             <label className="w-full">
               <span className={s.label}>Store Name *</span>
               <input type="text" className={s.input} name="name" />

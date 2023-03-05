@@ -1,5 +1,5 @@
 import { getPageData } from '../../../lib/page-data'
-import { OnBoardingStartPage } from '../../../components/pages'
+import { OnBoardingStartPage } from '../../../components'
 
 export async function getStaticProps() {
   const { header, footer } = await getPageData()
