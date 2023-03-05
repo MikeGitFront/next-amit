@@ -24,11 +24,40 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({ data }) => {
           </Button>
         </div>
         <div className={s.images}>
-          <Image src={mainImage?.url || ''} alt={mainImage?.alternativeText || ''} width={mainImage?.width} height={mainImage?.height} />
-          <Image className={s.animatedFirst} src={secondaryImages?.[0]?.url || ''} alt={secondaryImages?.[0]?.alternativeText || ''} width={secondaryImages?.[0].width} height={secondaryImages?.[0].height} />
-          <Image className={s.animatedSecond} src={secondaryImages?.[1]?.url || ''} alt={secondaryImages?.[1]?.alternativeText || ''} width={secondaryImages?.[1].width} height={secondaryImages?.[1].height} />
-          <Image className={s.animatedThird} src={secondaryImages?.[2]?.url || ''} alt={secondaryImages?.[2]?.alternativeText || ''} width={secondaryImages?.[2].width} height={secondaryImages?.[2].height} />
-          <Image className={s.animatedFourth} src={secondaryImages?.[3]?.url || ''} alt={secondaryImages?.[3]?.alternativeText || ''} width={secondaryImages?.[3].width} height={secondaryImages?.[3].height} />
+          <Image
+            src={mainImage?.url || ''}
+            alt={mainImage?.alternativeText || ''}
+            width={mainImage?.width}
+            height={mainImage?.height}
+          />
+          <Image
+            className={s.animatedFirst}
+            src={secondaryImages?.[0]?.url || ''}
+            alt={secondaryImages?.[0]?.alternativeText || ''}
+            width={secondaryImages?.[0].width}
+            height={secondaryImages?.[0].height}
+          />
+          <Image
+            className={s.animatedSecond}
+            src={secondaryImages?.[1]?.url || ''}
+            alt={secondaryImages?.[1]?.alternativeText || ''}
+            width={secondaryImages?.[1].width}
+            height={secondaryImages?.[1].height}
+          />
+          <Image
+            className={s.animatedThird}
+            src={secondaryImages?.[2]?.url || ''}
+            alt={secondaryImages?.[2]?.alternativeText || ''}
+            width={secondaryImages?.[2].width}
+            height={secondaryImages?.[2].height}
+          />
+          <Image
+            className={s.animatedFourth}
+            src={secondaryImages?.[3]?.url || ''}
+            alt={secondaryImages?.[3]?.alternativeText || ''}
+            width={secondaryImages?.[3].width}
+            height={secondaryImages?.[3].height}
+          />
         </div>
       </div>
     </Container>

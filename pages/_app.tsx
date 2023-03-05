@@ -5,10 +5,10 @@ import { Layout, SEO } from '../components'
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-    <SEO />
-    <Layout {...pageProps}>
-      <Component {...pageProps} />
-    </Layout>
+      <SEO />
+      <Layout {...pageProps}>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }

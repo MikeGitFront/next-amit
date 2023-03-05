@@ -32,69 +32,65 @@
     @apply w-auto h-auto absolute -z-10;
     animation: 1s linear forwards imageRight;
   }
-  
+
   @keyframes imageRight {
     0% {
       transform: translateX(0%);
     }
     90% {
       transform: translateX(75%) translateY(-125%) scale(1.3);
-  
     }
     100% {
       transform: translateX(70%) translateY(-120%) scale(1.1);
     }
   }
-  
+
   .animatedSecond {
     @apply w-auto h-auto absolute -z-10;
     animation: 1s linear 1s forwards imageLeft;
   }
-  
+
   @keyframes imageLeft {
     0% {
       transform: translateX(0%);
     }
     90% {
       transform: translateX(-245%) translateY(-95%) scale(1.4);
-  
     }
     100% {
       transform: translateX(-240%) translateY(-90%) scale(1.2);
     }
   }
-  
+
   .animatedThird {
     @apply w-auto h-auto absolute -z-10;
     animation: 1s linear 2s forwards imageBotLeft;
   }
-  
+
   @keyframes imageBotLeft {
     0% {
       transform: translateX(0%);
     }
     90% {
       transform: translateX(-105%) translateY(105%) scale(1.2);
-  
     }
     100% {
       transform: translateX(-100%) translateY(100%) scale(1.1);
       z-index: 10;
     }
   }
-  
+
   .animatedFourth {
     @apply w-auto h-auto absolute -z-10;
     animation: 1s linear 3s forwards imageBotRight;
   }
-  
+
   @keyframes imageBotRight {
     0% {
       transform: translateX(0%);
     }
     90% {
       transform: translateX(90%) translateY(230%) scale(1.2);
-  
     }
     100% {
       transform: translateX(85%) translateY(225%) scale(1);

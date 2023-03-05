@@ -15,7 +15,7 @@ module.exports = {
       nubito: '',
     },
     colors: {
-      'white': '#ffffff',
+      white: '#ffffff',
       'bg-primary': '#182c3a',
       'bg-gray-100': '#f6f6f6',
       'bg-gray-5': '#f5f5f5',

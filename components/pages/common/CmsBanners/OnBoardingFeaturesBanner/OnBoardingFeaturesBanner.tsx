@@ -97,7 +97,11 @@ export const OnBoardingFeaturesBanner: React.FC<OnBoardingFeaturesBannerProps> =
                   onClick={() => handleOpen(key)}
                   className="border border-[#e5e7eb] w-full min-h-[3.75rem] shadow-[0_0_20px_rgba(0,0,0,.05)] flex text-2xl text-text-primary justify-between items-center cursor-pointer relative transition-all"
                 >
-                  <div className={`absolute bg-[${bgColor}] left-0 top-0 h-full transition-all duration-700 -z-10 ${isActive ? 'w-full' : 'w-[19%]'} `}></div>
+                  <div
+                    className={`absolute bg-[${bgColor}] left-0 top-0 h-full transition-all duration-700 -z-10 ${
+                      isActive ? 'w-full' : 'w-[19%]'
+                    } `}
+                  ></div>
                   <div className="ml-6">{name}</div>
                   <div className="w-12">
                     <Image

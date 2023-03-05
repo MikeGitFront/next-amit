@@ -39,12 +39,22 @@ export const ProjectsBanner: React.FC<ProjectsBannerProps> = ({ data }) => {
         </div>
         <div className={s.blog}>
           <div className="hidden md:block md:w-[50%]">
-            <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={image?.width} height={image?.height} />
+            <Image
+              src={image?.url || ''}
+              alt={image?.alternativeText || ''}
+              width={image?.width}
+              height={image?.height}
+            />
           </div>
           <div className="w-full md:w-[50%] flex flex-col md:pl-36">
             <span className="font-secondary text-3xl md:text-5xl font-bold text-white mb-2">{title}</span>
             <div className="md:hidden block">
-              <Image src={image?.url || ''} alt={image?.alternativeText || ''} width={image?.width} height={image?.height} />
+              <Image
+                src={image?.url || ''}
+                alt={image?.alternativeText || ''}
+                width={image?.width}
+                height={image?.height}
+              />
             </div>
             <span className="text-heading text-[1.125rem] max-w-xl mb-8">{text[0]}</span>
             <span className="text-white border-l-2 border-primary pl-4 text-base">
