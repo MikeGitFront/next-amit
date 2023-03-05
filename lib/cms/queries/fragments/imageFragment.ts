@@ -7,6 +7,6 @@ export const imageFragment = /* GraphQL */ `
         width
         height
       }
+    }
   }
-}
 `

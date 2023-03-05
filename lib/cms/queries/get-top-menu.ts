@@ -1,25 +1,25 @@
-import { buttonFragment } from "./fragments/buttonFragment"
-import { imageFragment } from "./fragments/imageFragment"
+import { buttonFragment } from './fragments/buttonFragment'
+import { imageFragment } from './fragments/imageFragment'
 
 export const getTopMenuQuery = /* GraphQL */ `
-query getTopMenu {
-  topMenu {
-    data {
-      attributes {
-        logo {
-          ...Image
-        }
-        menu {
-          label
-          href
-        }
-        buttons {
-          ...Button
+  query getTopMenu {
+    topMenu {
+      data {
+        attributes {
+          logo {
+            ...Image
+          }
+          menu {
+            label
+            href
+          }
+          buttons {
+            ...Button
+          }
         }
       }
     }
   }
-}
-${imageFragment}
-${buttonFragment}
+  ${imageFragment}
+  ${buttonFragment}
 `

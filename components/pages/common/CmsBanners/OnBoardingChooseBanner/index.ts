@@ -1,1 +1,1 @@
-export { OnBoardingChooseBanner } from "./OnBoardingChooseBanner" 
+export { OnBoardingChooseBanner } from './OnBoardingChooseBanner'

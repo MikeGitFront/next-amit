@@ -1,5 +1,5 @@
-import { GetStaticPropsContext } from "next";
-import { getPageData } from "../lib/page-data";
+import { GetStaticPropsContext } from 'next'
+import { getPageData } from '../lib/page-data'
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   const { header, footer } = await getPageData()
@@ -13,9 +13,5 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 export default function NotFount() {
-  return (
-    <div className="flex items-center justify-center py-20 mx-8">
-      Page Not Found
-    </div>
-  )
+  return <div className="flex items-center justify-center py-20 mx-8">Page Not Found</div>
 }

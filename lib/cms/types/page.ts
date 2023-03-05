@@ -1,40 +1,40 @@
-import { Image, Link } from "./shared"
+import { Image, Link } from './shared'
 
 export enum BlockType {
-  TitleBanner = "TitleBanner",
-  InfoBanner = "InfoBanner",
-  ProjectsBanner = "ProjectsBanner",
-  ServicesBanner = "ServicesBanner",
-  PromoBanner = "PromoBanner",
-  StartBanner = "StartBanner",
-  ReviewsBanner = "ReviewsBanner",
-  FeaturedBanner = "FeaturedBanner",
-  BlogBanner = "BlogBanner",
-  ImageDescBanner = "ImageDescBanner",
-  FactsBanner = "FactsBanner",
-  AboutBanner = "AboutBanner",
-  ModelsBanner = "ModelsBanner",
-  ShowOffBanner = "ShowOffBanner",
-  ContactUsInfoBanner = "ContactUsInfoBanner",
-  OnBoardingPromoBanner = "OnBoardingPromoBanner",
-  OnBoardingChooseBanner = "OnBoardingChooseBanner",
-  OnBoardingFeaturesBanner = "OnBoardingFeaturesBanner",
-  OnBoardingQABanner = "OnBoardingQABanner",
-  OnBoardingCreateStoreBanner = "OnBoardingCreateStoreBanner",
-  CommonPromoBanner = "CommonPromoBanner",
-  ClientBanner = "ClientBanner",
-  AboutProjectBanner = "AboutProjectBanner",
-  HeadingBanner = "HeadingBanner",
-  RichTextBanner = "RichTextBanner",
-  CrossPlatformBanner = "CrossPlatformBanner",
-  ComponentsTableBanner = "ComponentsTableBanner",
-  IntegrationBanner = "IntegrationBanner",
-  NoType = "NoType",
+  TitleBanner = 'TitleBanner',
+  InfoBanner = 'InfoBanner',
+  ProjectsBanner = 'ProjectsBanner',
+  ServicesBanner = 'ServicesBanner',
+  PromoBanner = 'PromoBanner',
+  StartBanner = 'StartBanner',
+  ReviewsBanner = 'ReviewsBanner',
+  FeaturedBanner = 'FeaturedBanner',
+  BlogBanner = 'BlogBanner',
+  ImageDescBanner = 'ImageDescBanner',
+  FactsBanner = 'FactsBanner',
+  AboutBanner = 'AboutBanner',
+  ModelsBanner = 'ModelsBanner',
+  ShowOffBanner = 'ShowOffBanner',
+  ContactUsInfoBanner = 'ContactUsInfoBanner',
+  OnBoardingPromoBanner = 'OnBoardingPromoBanner',
+  OnBoardingChooseBanner = 'OnBoardingChooseBanner',
+  OnBoardingFeaturesBanner = 'OnBoardingFeaturesBanner',
+  OnBoardingQABanner = 'OnBoardingQABanner',
+  OnBoardingCreateStoreBanner = 'OnBoardingCreateStoreBanner',
+  CommonPromoBanner = 'CommonPromoBanner',
+  ClientBanner = 'ClientBanner',
+  AboutProjectBanner = 'AboutProjectBanner',
+  HeadingBanner = 'HeadingBanner',
+  RichTextBanner = 'RichTextBanner',
+  CrossPlatformBanner = 'CrossPlatformBanner',
+  ComponentsTableBanner = 'ComponentsTableBanner',
+  IntegrationBanner = 'IntegrationBanner',
+  NoType = 'NoType',
 }
 
 export enum ButtonType {
-  Primary = "primary",
-  Secondary = "secondary",
+  Primary = 'primary',
+  Secondary = 'secondary',
 }
 
 export type TitleBannerData = {
@@ -385,7 +385,7 @@ export type ComponentsTableBanner = {
 export type IntegrationBannerData = {
   title: string
   description: string
-  image: Image | null 
+  image: Image | null
 }
 
 export type IntegrationBanner = {

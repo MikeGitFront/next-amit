@@ -1,45 +1,55 @@
-import React, { useCallback, useState } from "react"
-import { OnBoardingFeaturesBannerData } from "../../../../../lib/cms"
-import { Container } from "../../UI/Container"
-import CheckMark from "../../../../icons/check-mark.png"
-import ArrowDown from "../../../../icons/arrow-down.svg"
-import Image from "next/image"
-import { Button } from "../../UI/Button"
+import React, { useCallback, useState } from 'react'
+import { OnBoardingFeaturesBannerData } from '../../../../../lib/cms'
+import { Container } from '../../UI/Container'
+import CheckMark from '../../../../icons/check-mark.png'
+import ArrowDown from '../../../../icons/arrow-down.svg'
+import Image from 'next/image'
+import { Button } from '../../UI/Button'
 
 export type OnBoardingFeaturesBannerProps = {
   data: OnBoardingFeaturesBannerData
 }
 
-const BUTTONS_AMOUNT = ["0", "0", "0"].fill("GET A QUOTE" as never, 0, 3) as string[]
+const BUTTONS_AMOUNT = ['0', '0', '0'].fill('GET A QUOTE' as never, 0, 3) as string[]
 
 export const OnBoardingFeaturesBanner: React.FC<OnBoardingFeaturesBannerProps> = ({ data }) => {
   const { description, title, headers, rows } = data
 
-  const [mobileHeaders, setMobileHeaders] = useState(() => headers.map((item, index) => ({ key: index, isActive: false, name: item })))
+  const [mobileHeaders, setMobileHeaders] = useState(() =>
+    headers.map((item, index) => ({ key: index, isActive: false, name: item }))
+  )
 
   const handleOpen = useCallback((key: number) => {
-    setMobileHeaders(prev => {
+    setMobileHeaders((prev) => {
       const previousData = [...prev]
-      const item = prev.find(item => item.key === key)!
+      const item = prev.find((item) => item.key === key)!
       previousData.splice(previousData.indexOf(item), 1, { ...item, isActive: !item.isActive })
       return [...previousData]
     })
   }, [])
 
   const mobileTabData = useCallback((name: string) => {
-    const headerIndex = headers.findIndex(header => header === name)
-    const tabData = rows.map(row => {
-      return row.items.map((item, index) => ([index === 0 && item, row.items[headerIndex + 1]]))
-    }).map(item => item[0])
+    const headerIndex = headers.findIndex((header) => header === name)
+    const tabData = rows
+      .map((row) => {
+        return row.items.map((item, index) => [index === 0 && item, row.items[headerIndex + 1]])
+      })
+      .map((item) => item[0])
     return (
       <div className="grid grid-cols-[150px_1fr] px-4 py-2 border border-gray-6 w-full">
         {tabData.map(([title, text]) => (
           <>
             <div className="min-h-[3rem] flex justify-start pb-4 pt-3 border-b-[1px] border-gray-6">{title}</div>
-            <div className="min-h-[3rem] flex items-center justify-end text-right border-b-[1px] border-gray-6">{text === "yes" ? <Image src={CheckMark} alt="check mark icon" width={18} height={14} /> : text}</div>
+            <div className="min-h-[3rem] flex items-center justify-end text-right border-b-[1px] border-gray-6">
+              {text === 'yes' ? <Image src={CheckMark} alt="check mark icon" width={18} height={14} /> : text}
+            </div>
           </>
         ))}
-        <div className="flex items-center col-span-2 justify-center mt-4 min-h-[3rem]"><Button href="/contact-us" type="primary">GET A QUOTE</Button></div>
+        <div className="flex items-center col-span-2 justify-center mt-4 min-h-[3rem]">
+          <Button href="/contact-us" type="primary">
+            GET A QUOTE
+          </Button>
+        </div>
       </div>
     )
   }, [])
@@ -52,27 +62,52 @@ export const OnBoardingFeaturesBanner: React.FC<OnBoardingFeaturesBannerProps> =
           <div className="col-span-1 min-h-[3rem]"></div>
           {headers.map((text, index) => {
             return (
-              <div key={index} className="min-h-[3rem] text-[20px] fron-bold flex items-center justify-center">{text}</div>
+              <div key={index} className="min-h-[3rem] text-[20px] fron-bold flex items-center justify-center">
+                {text}
+              </div>
             )
           })}
-          {rows.map(({ items }) => items.map((item, index) =>
-            <div key={index} className={`border px-1 flex items-center ${index % 4 === 0 && "font-semibold"} justify-${index % 4 !== 0 ? "center" : "start"} min-h-[3rem] border-gray-6`}>
-              {item === "yes" ? <Image src={CheckMark} alt="check mark icon" width={18} height={14} /> : item}
-            </div>))}
+          {rows.map(({ items }) =>
+            items.map((item, index) => (
+              <div
+                key={index}
+                className={`border px-1 flex items-center ${index % 4 === 0 && 'font-semibold'} justify-${
+                  index % 4 !== 0 ? 'center' : 'start'
+                } min-h-[3rem] border-gray-6`}
+              >
+                {item === 'yes' ? <Image src={CheckMark} alt="check mark icon" width={18} height={14} /> : item}
+              </div>
+            ))
+          )}
           <div className="col-span-1 min-h-[3rem]"></div>
-          {BUTTONS_AMOUNT.map((text, index) => <div key={index} className="flex items-center justify-center mt-4 col-span-1 min-h-[3rem]"><Button href="/contact-us" type="primary">{text}</Button></div>)}
+          {BUTTONS_AMOUNT.map((text, index) => (
+            <div key={index} className="flex items-center justify-center mt-4 col-span-1 min-h-[3rem]">
+              <Button href="/contact-us" type="primary">
+                {text}
+              </Button>
+            </div>
+          ))}
         </div>
         <div className="w-full md:hidden">
           {mobileHeaders.map(({ isActive, name, key }, index) => {
             return (
               <div key={index} className="flex flex-col items-center justify-center mb-[0.6rem]">
-                <button onClick={() => handleOpen(key)} className="border border-[#e5e7eb] w-full min-h-[3.75rem] shadow-[0_0_20px_rgba(0,0,0,.05)] flex text-2xl text-text-primary justify-between items-center cursor-pointer">
+                <button
+                  onClick={() => handleOpen(key)}
+                  className="border border-[#e5e7eb] w-full min-h-[3.75rem] shadow-[0_0_20px_rgba(0,0,0,.05)] flex text-2xl text-text-primary justify-between items-center cursor-pointer"
+                >
                   <div className="ml-6">{name}</div>
-                  <div className="w-12"><Image src={ArrowDown} className={` ${isActive ? "rotate-180" : ""}`} alt="check mark icon" width={18} height={14} /></div>
+                  <div className="w-12">
+                    <Image
+                      src={ArrowDown}
+                      className={` ${isActive ? 'rotate-180' : ''}`}
+                      alt="check mark icon"
+                      width={18}
+                      height={14}
+                    />
+                  </div>
                 </button>
-                {isActive && (
-                  mobileTabData(name)
-                )}
+                {isActive && mobileTabData(name)}
               </div>
             )
           })}

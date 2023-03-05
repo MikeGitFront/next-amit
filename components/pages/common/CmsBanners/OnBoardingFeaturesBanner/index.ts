@@ -1,1 +1,1 @@
-export { OnBoardingFeaturesBanner } from "./OnBoardingFeaturesBanner"
+export { OnBoardingFeaturesBanner } from './OnBoardingFeaturesBanner'

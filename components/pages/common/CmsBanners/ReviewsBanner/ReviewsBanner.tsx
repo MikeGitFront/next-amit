@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react"
-import { ReviewsBannerData } from "../../../../../lib/cms/types/page"
-import { Container } from "../../UI/Container"
-import Image from "next/image"
-import { useKeenSlider } from "keen-slider/react"
-import s from "./ReviewsBanner.module.css"
-import Quote from "../../../../icons/quote.svg"
-import cn from "clsx"
-import { Arrow } from "../../../../icons/Arrow/Arrow"
-import { useScreenWidth } from "../../../../hooks/useScreenWidth"
+import React, { useRef, useState } from 'react'
+import { ReviewsBannerData } from '../../../../../lib/cms/types/page'
+import { Container } from '../../UI/Container'
+import Image from 'next/image'
+import { useKeenSlider } from 'keen-slider/react'
+import s from './ReviewsBanner.module.css'
+import Quote from '../../../../icons/quote.svg'
+import cn from 'clsx'
+import { Arrow } from '../../../../icons/Arrow/Arrow'
+import { useScreenWidth } from '../../../../hooks/useScreenWidth'
 
 type ReviewsBannerProps = {
   data: ReviewsBannerData
@@ -29,7 +29,6 @@ export const ReviewsBanner: React.FC<ReviewsBannerProps> = ({ data }) => {
     created() {
       setIsMounted(true)
     },
-
   })
 
   return (
@@ -45,8 +44,7 @@ export const ReviewsBanner: React.FC<ReviewsBannerProps> = ({ data }) => {
                   onClick={(e: React.MouseEvent<SVGSVGElement>) => {
                     e.stopPropagation()
                     sliderRef.current?.prev()
-                  }
-                  }
+                  }}
                 />
               </div>
               <div className="flex items-center justify-center w-12 h-12 bg-[rgba(0,0,0,.05)] rounded-full">
@@ -54,8 +52,7 @@ export const ReviewsBanner: React.FC<ReviewsBannerProps> = ({ data }) => {
                   onClick={(e: React.MouseEvent<SVGSVGElement>) => {
                     e.stopPropagation()
                     sliderRef.current?.next()
-                  }
-                  }
+                  }}
                 />
               </div>
             </div>
@@ -64,15 +61,30 @@ export const ReviewsBanner: React.FC<ReviewsBannerProps> = ({ data }) => {
         <div ref={ref} className={s.slider}>
           {reviews.map(({ description, image, name, position, surname }, index) => {
             return (
-              <div key={index} className={cn(s.sliderItem, `width-[${100 / reviews.length}vw]`, `keen-slider__slide number-slide${index}`)}>
+              <div
+                key={index}
+                className={cn(
+                  s.sliderItem,
+                  `width-[${100 / reviews.length}vw]`,
+                  `keen-slider__slide number-slide${index}`
+                )}
+              >
                 <div className={s.imageWrapper}>
-                  <Image src={image?.url || ""} alt={image?.alternativeText || ""} width={100} height={100} style={{ borderRadius: "99999px" }} />
+                  <Image
+                    src={image?.url || ''}
+                    alt={image?.alternativeText || ''}
+                    width={100}
+                    height={100}
+                    style={{ borderRadius: '99999px' }}
+                  />
                 </div>
                 <div className="mb-2 ml-1">
                   <Image src={Quote} alt="quote" width={24} height={18} />
                 </div>
                 <div className="">{description}</div>
-                <div className={s.initials}>{name} {surname}</div>
+                <div className={s.initials}>
+                  {name} {surname}
+                </div>
                 <div>{position}</div>
               </div>
             )

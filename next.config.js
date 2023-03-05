@@ -3,11 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [
-      'localhost',
-      'next-amit-strapi-app.herokuapp.com',
-    ],
-  }
+    domains: ['localhost', 'next-amit-strapi-app.herokuapp.com'],
+  },
 }
 
 module.exports = nextConfig

@@ -1,5 +1,5 @@
 export type Link = {
-  buttonType?: "primary" | "secondary"
+  buttonType?: 'primary' | 'secondary'
   label: string
   href: string
 }
@@ -12,9 +12,9 @@ export type Image = {
 }
 
 export type Button = {
-  buttonType: "primary" | "secondary"
+  buttonType: 'primary' | 'secondary'
   label: string | null
   href: string | null
-} 
+}
 
-export type Icon = { image: Image, href: string }
+export type Icon = { image: Image; href: string }

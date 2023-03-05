@@ -1,26 +1,25 @@
-import { imageFragment } from "./fragments/imageFragment"
-import { linkFragment } from "./fragments/linkFragment"
-
+import { imageFragment } from './fragments/imageFragment'
+import { linkFragment } from './fragments/linkFragment'
 
 export const getFooterQuery = /* GraphQL */ `
-query getFooter {
-  footer {
-    data {
-      attributes {
-        copyright
-        link {
-          ...Link
-        }
-        icons {
-          image {
-            ...Image
+  query getFooter {
+    footer {
+      data {
+        attributes {
+          copyright
+          link {
+            ...Link
           }
-          href
+          icons {
+            image {
+              ...Image
+            }
+            href
+          }
         }
       }
     }
   }
-}
-${imageFragment}
-${linkFragment}
+  ${imageFragment}
+  ${linkFragment}
 `

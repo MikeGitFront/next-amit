@@ -1,1 +1,1 @@
-export { RichTextBanner } from "./RichTextBanner"
+export { RichTextBanner } from './RichTextBanner'

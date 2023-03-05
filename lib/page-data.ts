@@ -1,10 +1,10 @@
-import { getFooterOperation } from "./cms/operations/get-footer"
-import { getTopMenuOperation } from "./cms/operations/get-top-menu"
+import { getFooterOperation } from './cms/operations/get-footer'
+import { getTopMenuOperation } from './cms/operations/get-top-menu'
 
 export const getPageData = async () => {
   const { menu, buttons, logo } = await getTopMenuOperation()
-  const { copyright, icons, links} = await getFooterOperation()
-  
+  const { copyright, icons, links } = await getFooterOperation()
+
   return {
     header: {
       logo,
@@ -15,6 +15,6 @@ export const getPageData = async () => {
       copyright,
       icons,
       links,
-    }
+    },
   }
 }

@@ -1,7 +1,7 @@
 export const buttonFragment = /* GraphQL */ `
-fragment Button on ComponentCommonButton {
-  label
-  href
-  type
-}
+  fragment Button on ComponentCommonButton {
+    label
+    href
+    type
+  }
 `

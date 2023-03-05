@@ -1,1 +1,1 @@
-export { ComponentsTableBanner } from "./ComponentsTableBanner"
+export { ComponentsTableBanner } from './ComponentsTableBanner'

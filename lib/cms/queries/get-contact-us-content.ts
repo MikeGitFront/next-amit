@@ -1,27 +1,28 @@
-import { imageFragment } from "./fragments/imageFragment"
+import { imageFragment } from './fragments/imageFragment'
 
 export const getContantUsQuery = /* GraphQL */ `
-query getContactUsContent ($path: String) {
-  pages (filters:{ path: { eq: $path } }) {
-    data {
-      attributes {
-        pageTitle {
-          title
-        }
-        blocks {
-          __typename
-          ... on ComponentCommonTitleBlock {
+  query getContactUsContent($path: String) {
+    pages(filters: { path: { eq: $path } }) {
+      data {
+        attributes {
+          pageTitle {
             title
           }
-          ... on ComponentBlocksContactUsInfo {
-            title
-            items {
-              image {
-                ...Image
-              }
+          blocks {
+            __typename
+            ... on ComponentCommonTitleBlock {
+              title
+            }
+            ... on ComponentBlocksContactUsInfo {
               title
               items {
-                text
+                image {
+                  ...Image
+                }
+                title
+                items {
+                  text
+                }
               }
             }
           }
@@ -29,6 +30,5 @@ query getContactUsContent ($path: String) {
       }
     }
   }
-}
-${imageFragment}
+  ${imageFragment}
 `

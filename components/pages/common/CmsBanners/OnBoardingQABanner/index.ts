@@ -1,1 +1,1 @@
-export { OnBoardingQABanner } from "./OnBoardingQABanner"
+export { OnBoardingQABanner } from './OnBoardingQABanner'

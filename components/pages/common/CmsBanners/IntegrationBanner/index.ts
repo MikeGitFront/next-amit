@@ -1,1 +1,1 @@
-export { IntegrationBanner } from "./IntegrationBanner"
+export { IntegrationBanner } from './IntegrationBanner'

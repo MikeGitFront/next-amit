@@ -1,5 +1,5 @@
 .wrapper {
-  @apply flex flex-wrap justify-between md:gap-8 mt-6 mx-auto mb-10;
+  @apply flex flex-wrap md:flex-nowrap justify-between md:gap-8 mt-6 mx-auto mb-10;
 }
 
 @media (min-width: 768px) {

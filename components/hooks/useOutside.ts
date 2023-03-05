@@ -1,9 +1,6 @@
-import { RefObject, useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from 'react'
 
-export const useOutside = (
-  ref: RefObject<HTMLElement | null>,
-  callback: (event: Event) => void,
-) => {
+export const useOutside = (ref: RefObject<HTMLElement | null>, callback: (event: Event) => void) => {
   const callbackRef = useRef(callback)
 
   useEffect(() => {
@@ -12,15 +9,14 @@ export const useOutside = (
 
   useEffect(() => {
     const handler: EventListener = (event) => {
-      const { current: target } = ref || { current: ""}
-      
+      const { current: target } = ref || { current: '' }
+
       if (target && !target.contains(event.target as HTMLElement)) {
         callbackRef.current(event)
       }
     }
 
-    document.addEventListener("click", handler)
-    return () => document.removeEventListener("click", handler)
+    document.addEventListener('click', handler)
+    return () => document.removeEventListener('click', handler)
   }, [ref])
 }
-

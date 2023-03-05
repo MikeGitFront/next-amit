@@ -1,1 +1,1 @@
-export { TitleBanner } from "./TitleBanner"
+export { TitleBanner } from './TitleBanner'

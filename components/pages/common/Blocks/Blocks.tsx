@@ -1,5 +1,5 @@
-import React from "react"
-import { BlockType, PageBlock } from "../../../../lib/cms/types/page"
+import React from 'react'
+import { BlockType, PageBlock } from '../../../../lib/cms/types/page'
 import {
   InfoBanner,
   ProjectsBanner,
@@ -28,8 +28,8 @@ import {
   RichTextBanner,
   CrossPlatformBanner,
   IntegrationBanner,
-  ComponentsTableBanner
-} from "../CmsBanners"
+  ComponentsTableBanner,
+} from '../CmsBanners'
 
 type BlocksProps = {
   blocks: PageBlock[]
@@ -98,7 +98,8 @@ export const Blocks: React.FC<BlocksProps> = ({ blocks }) => {
             return <ComponentsTableBanner key={index} data={block.data} />
           case BlockType.NoType:
             return null
-          default: null
+          default:
+            null
         }
       })}
     </>
