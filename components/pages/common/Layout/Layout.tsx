@@ -32,12 +32,11 @@ export const Layout: React.FC<LayoutProps> = ({ children, header, footer }) => {
   useOutside(asideRef.current!, () => setIsMobileMenuOpen(false))
 
   const previousPath = usePrevious(pathname)
-  console.log(asideRef)
   useEffect(() => {
     if (previousPath !== pathname && isMobileMenuOpen) {
       setIsMobileMenuOpen(false)
     }
-  }, [pathname, isMobileMenuOpen])
+  }, [pathname, isMobileMenuOpen, previousPath])
 
   const {
     logo: { alternativeText, url },

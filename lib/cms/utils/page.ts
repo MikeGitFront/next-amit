@@ -540,7 +540,7 @@ const createContentHadnler = ({ blockHandlersMap }: { blockHandlersMap: typeof b
     }
     const blockHandler = blockHandlersMap[contentBlock.__typename]
     if (blockHandler) {
-      // @ts-ignore field to distinguish correct type cannot be added
+      // @ts-ignore field to distinguish correct type cannot be added // Type error: Expression produces a union type that is too complex to represent.
       return blockHandler.normalizeBlock(contentBlock)
     }
     return {

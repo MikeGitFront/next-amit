@@ -1821,241 +1821,6 @@ export type ImageFragment = {
 
 export type LinkFragment = { __typename?: 'ComponentCommonLink'; label?: string | null; href?: string | null }
 
-export type GetCaseStudiesContentQueryVariables = Exact<{
-  path?: InputMaybe<Scalars['String']>
-}>
-
-export type GetCaseStudiesContentQuery = {
-  __typename?: 'Query'
-  pages?: {
-    __typename?: 'PageEntityResponseCollection'
-    data: Array<{
-      __typename?: 'PageEntity'
-      attributes?: {
-        __typename?: 'Page'
-        pageTitle?: { __typename?: 'ComponentCommonTitleBlock'; title?: string | null } | null
-        blocks?: Array<
-          | { __typename: 'ComponentBlocksAboutBanner' }
-          | { __typename: 'ComponentBlocksAboutProjectBanner'; title?: string | null; description?: string | null }
-          | {
-              __typename: 'ComponentBlocksBlogBanner'
-              items?: Array<{
-                __typename?: 'ComponentBlogItem'
-                title?: string | null
-                description?: string | null
-                image?: {
-                  __typename?: 'UploadFileEntityResponse'
-                  data?: {
-                    __typename?: 'UploadFileEntity'
-                    attributes?: {
-                      __typename?: 'UploadFile'
-                      url: string
-                      alternativeText?: string | null
-                      width?: number | null
-                      height?: number | null
-                    } | null
-                  } | null
-                } | null
-                link?: { __typename?: 'ComponentCommonLink'; label?: string | null; href?: string | null } | null
-              } | null> | null
-            }
-          | {
-              __typename: 'ComponentBlocksClientBanner'
-              items?: Array<{
-                __typename?: 'ComponentFactsFactsItem'
-                title?: string | null
-                description?: string | null
-                image?: {
-                  __typename?: 'UploadFileEntityResponse'
-                  data?: {
-                    __typename?: 'UploadFileEntity'
-                    attributes?: {
-                      __typename?: 'UploadFile'
-                      url: string
-                      alternativeText?: string | null
-                      width?: number | null
-                      height?: number | null
-                    } | null
-                  } | null
-                } | null
-              } | null> | null
-              images?: {
-                __typename?: 'UploadFileRelationResponseCollection'
-                data: Array<{
-                  __typename?: 'UploadFileEntity'
-                  attributes?: { __typename?: 'UploadFile'; alternativeText?: string | null; url: string } | null
-                }>
-              } | null
-            }
-          | {
-              __typename: 'ComponentBlocksComponentsTableBanner'
-              title?: string | null
-              description?: string | null
-              headers?: Array<{ __typename?: 'ComponentCommonTableHeaders'; text?: string | null } | null> | null
-              rows?: Array<{
-                __typename?: 'ComponentTableRowsItem'
-                items?: Array<{ __typename?: 'ComponentCommonTextItem'; text?: string | null } | null> | null
-              } | null> | null
-            }
-          | { __typename: 'ComponentBlocksContactUsInfo' }
-          | {
-              __typename: 'ComponentBlocksCrossPlatformBanner'
-              title?: string | null
-              description?: string | null
-              image?: {
-                __typename?: 'UploadFileEntityResponse'
-                data?: {
-                  __typename?: 'UploadFileEntity'
-                  attributes?: {
-                    __typename?: 'UploadFile'
-                    url: string
-                    alternativeText?: string | null
-                    width?: number | null
-                    height?: number | null
-                  } | null
-                } | null
-              } | null
-            }
-          | { __typename: 'ComponentBlocksFactsBanner' }
-          | { __typename: 'ComponentBlocksFeaturedBanner' }
-          | { __typename: 'ComponentBlocksHeadingBanner'; text?: string | null }
-          | { __typename: 'ComponentBlocksImageDescBanner' }
-          | { __typename: 'ComponentBlocksInfoBanner' }
-          | {
-              __typename: 'ComponentBlocksIntegrationBanner'
-              title?: string | null
-              description?: string | null
-              image?: {
-                __typename?: 'UploadFileEntityResponse'
-                data?: {
-                  __typename?: 'UploadFileEntity'
-                  attributes?: {
-                    __typename?: 'UploadFile'
-                    url: string
-                    alternativeText?: string | null
-                    width?: number | null
-                    height?: number | null
-                  } | null
-                } | null
-              } | null
-            }
-          | { __typename: 'ComponentBlocksModelsBanner' }
-          | { __typename: 'ComponentBlocksOnBoardingChooseBanner' }
-          | { __typename: 'ComponentBlocksOnBoardingCreateStoreBanner' }
-          | { __typename: 'ComponentBlocksOnBoardingFeaturesBanner' }
-          | { __typename: 'ComponentBlocksOnBoardingPromoBanner' }
-          | { __typename: 'ComponentBlocksOnBoardingQaBanner' }
-          | { __typename: 'ComponentBlocksProjectsBanner' }
-          | { __typename: 'ComponentBlocksPromoBanner' }
-          | { __typename: 'ComponentBlocksReviewsBanner' }
-          | { __typename: 'ComponentBlocksRichTextBanner'; text?: string | null }
-          | { __typename: 'ComponentBlocksServicesBanner' }
-          | { __typename: 'ComponentBlocksShowOffBanner' }
-          | { __typename: 'ComponentBlocksStartBanner' }
-          | {
-              __typename: 'ComponentCommonPromoBanner'
-              title?: string | null
-              description?: string | null
-              image?: {
-                __typename?: 'UploadFileEntityResponse'
-                data?: {
-                  __typename?: 'UploadFileEntity'
-                  attributes?: {
-                    __typename?: 'UploadFile'
-                    url: string
-                    alternativeText?: string | null
-                    width?: number | null
-                    height?: number | null
-                  } | null
-                } | null
-              } | null
-              button?: {
-                __typename?: 'ComponentCommonButton'
-                label?: string | null
-                href?: string | null
-                type?: Enum_Componentcommonbutton_Type | null
-              } | null
-            }
-          | { __typename: 'ComponentCommonTitleBlock'; title?: string | null }
-          | { __typename: 'Error' }
-          | null
-        > | null
-      } | null
-    }>
-  } | null
-}
-
-export type GetContactUsContentQueryVariables = Exact<{
-  path?: InputMaybe<Scalars['String']>
-}>
-
-export type GetContactUsContentQuery = {
-  __typename?: 'Query'
-  pages?: {
-    __typename?: 'PageEntityResponseCollection'
-    data: Array<{
-      __typename?: 'PageEntity'
-      attributes?: {
-        __typename?: 'Page'
-        pageTitle?: { __typename?: 'ComponentCommonTitleBlock'; title?: string | null } | null
-        blocks?: Array<
-          | { __typename: 'ComponentBlocksAboutBanner' }
-          | { __typename: 'ComponentBlocksAboutProjectBanner' }
-          | { __typename: 'ComponentBlocksBlogBanner' }
-          | { __typename: 'ComponentBlocksClientBanner' }
-          | { __typename: 'ComponentBlocksComponentsTableBanner' }
-          | {
-              __typename: 'ComponentBlocksContactUsInfo'
-              title?: string | null
-              items?: Array<{
-                __typename?: 'ComponentContactItem'
-                title?: string | null
-                image?: {
-                  __typename?: 'UploadFileEntityResponse'
-                  data?: {
-                    __typename?: 'UploadFileEntity'
-                    attributes?: {
-                      __typename?: 'UploadFile'
-                      url: string
-                      alternativeText?: string | null
-                      width?: number | null
-                      height?: number | null
-                    } | null
-                  } | null
-                } | null
-                items?: Array<{ __typename?: 'ComponentCommonTextItem'; text?: string | null } | null> | null
-              } | null> | null
-            }
-          | { __typename: 'ComponentBlocksCrossPlatformBanner' }
-          | { __typename: 'ComponentBlocksFactsBanner' }
-          | { __typename: 'ComponentBlocksFeaturedBanner' }
-          | { __typename: 'ComponentBlocksHeadingBanner' }
-          | { __typename: 'ComponentBlocksImageDescBanner' }
-          | { __typename: 'ComponentBlocksInfoBanner' }
-          | { __typename: 'ComponentBlocksIntegrationBanner' }
-          | { __typename: 'ComponentBlocksModelsBanner' }
-          | { __typename: 'ComponentBlocksOnBoardingChooseBanner' }
-          | { __typename: 'ComponentBlocksOnBoardingCreateStoreBanner' }
-          | { __typename: 'ComponentBlocksOnBoardingFeaturesBanner' }
-          | { __typename: 'ComponentBlocksOnBoardingPromoBanner' }
-          | { __typename: 'ComponentBlocksOnBoardingQaBanner' }
-          | { __typename: 'ComponentBlocksProjectsBanner' }
-          | { __typename: 'ComponentBlocksPromoBanner' }
-          | { __typename: 'ComponentBlocksReviewsBanner' }
-          | { __typename: 'ComponentBlocksRichTextBanner' }
-          | { __typename: 'ComponentBlocksServicesBanner' }
-          | { __typename: 'ComponentBlocksShowOffBanner' }
-          | { __typename: 'ComponentBlocksStartBanner' }
-          | { __typename: 'ComponentCommonPromoBanner' }
-          | { __typename: 'ComponentCommonTitleBlock'; title?: string | null }
-          | { __typename: 'Error' }
-          | null
-        > | null
-      } | null
-    }>
-  } | null
-}
-
 export type GetFooterQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetFooterQuery = {
@@ -2087,190 +1852,6 @@ export type GetFooterQuery = {
         } | null> | null
       } | null
     } | null
-  } | null
-}
-
-export type GetOnboardingContentQueryVariables = Exact<{
-  path?: InputMaybe<Scalars['String']>
-}>
-
-export type GetOnboardingContentQuery = {
-  __typename?: 'Query'
-  pages?: {
-    __typename?: 'PageEntityResponseCollection'
-    data: Array<{
-      __typename?: 'PageEntity'
-      attributes?: {
-        __typename?: 'Page'
-        pageTitle?: { __typename?: 'ComponentCommonTitleBlock'; title?: string | null } | null
-        blocks?: Array<
-          | { __typename: 'ComponentBlocksAboutBanner' }
-          | { __typename: 'ComponentBlocksAboutProjectBanner' }
-          | { __typename: 'ComponentBlocksBlogBanner' }
-          | { __typename: 'ComponentBlocksClientBanner' }
-          | { __typename: 'ComponentBlocksComponentsTableBanner' }
-          | { __typename: 'ComponentBlocksContactUsInfo' }
-          | { __typename: 'ComponentBlocksCrossPlatformBanner' }
-          | { __typename: 'ComponentBlocksFactsBanner' }
-          | { __typename: 'ComponentBlocksFeaturedBanner' }
-          | { __typename: 'ComponentBlocksHeadingBanner' }
-          | { __typename: 'ComponentBlocksImageDescBanner' }
-          | { __typename: 'ComponentBlocksInfoBanner' }
-          | { __typename: 'ComponentBlocksIntegrationBanner' }
-          | { __typename: 'ComponentBlocksModelsBanner' }
-          | {
-              __typename: 'ComponentBlocksOnBoardingChooseBanner'
-              title?: string | null
-              description?: string | null
-              subtitle?: string | null
-              items?: Array<{
-                __typename?: 'ComponentFactsFactsItem'
-                title?: string | null
-                description?: string | null
-                image?: {
-                  __typename?: 'UploadFileEntityResponse'
-                  data?: {
-                    __typename?: 'UploadFileEntity'
-                    attributes?: {
-                      __typename?: 'UploadFile'
-                      url: string
-                      alternativeText?: string | null
-                      width?: number | null
-                      height?: number | null
-                    } | null
-                  } | null
-                } | null
-              } | null> | null
-            }
-          | {
-              __typename: 'ComponentBlocksOnBoardingCreateStoreBanner'
-              button?: {
-                __typename?: 'ComponentCommonButton'
-                label?: string | null
-                href?: string | null
-                type?: Enum_Componentcommonbutton_Type | null
-              } | null
-            }
-          | {
-              __typename: 'ComponentBlocksOnBoardingFeaturesBanner'
-              title?: string | null
-              description?: string | null
-              headers?: Array<{ __typename?: 'ComponentCommonTableHeaders'; text?: string | null } | null> | null
-              rows?: Array<{
-                __typename?: 'ComponentTableRowItem'
-                items?: Array<{ __typename?: 'ComponentCommonTextItem'; text?: string | null } | null> | null
-              } | null> | null
-            }
-          | {
-              __typename: 'ComponentBlocksOnBoardingPromoBanner'
-              label?: string | null
-              title?: string | null
-              description?: string | null
-              images?: {
-                __typename?: 'UploadFileRelationResponseCollection'
-                data: Array<{
-                  __typename?: 'UploadFileEntity'
-                  attributes?: {
-                    __typename?: 'UploadFile'
-                    width?: number | null
-                    height?: number | null
-                    alternativeText?: string | null
-                    url: string
-                  } | null
-                }>
-              } | null
-              button?: {
-                __typename?: 'ComponentCommonButton'
-                label?: string | null
-                href?: string | null
-                type?: Enum_Componentcommonbutton_Type | null
-              } | null
-              mainImage?: {
-                __typename?: 'UploadFileEntityResponse'
-                data?: {
-                  __typename?: 'UploadFileEntity'
-                  attributes?: {
-                    __typename?: 'UploadFile'
-                    url: string
-                    alternativeText?: string | null
-                    width?: number | null
-                    height?: number | null
-                  } | null
-                } | null
-              } | null
-              bgImage?: {
-                __typename?: 'UploadFileEntityResponse'
-                data?: {
-                  __typename?: 'UploadFileEntity'
-                  attributes?: {
-                    __typename?: 'UploadFile'
-                    url: string
-                    alternativeText?: string | null
-                    width?: number | null
-                    height?: number | null
-                  } | null
-                } | null
-              } | null
-            }
-          | {
-              __typename: 'ComponentBlocksOnBoardingQaBanner'
-              title?: string | null
-              items?: Array<{
-                __typename?: 'ComponentFactsFactsItem'
-                title?: string | null
-                description?: string | null
-                image?: {
-                  __typename?: 'UploadFileEntityResponse'
-                  data?: {
-                    __typename?: 'UploadFileEntity'
-                    attributes?: {
-                      __typename?: 'UploadFile'
-                      url: string
-                      alternativeText?: string | null
-                      width?: number | null
-                      height?: number | null
-                    } | null
-                  } | null
-                } | null
-              } | null> | null
-            }
-          | { __typename: 'ComponentBlocksProjectsBanner' }
-          | { __typename: 'ComponentBlocksPromoBanner' }
-          | { __typename: 'ComponentBlocksReviewsBanner' }
-          | { __typename: 'ComponentBlocksRichTextBanner' }
-          | { __typename: 'ComponentBlocksServicesBanner' }
-          | { __typename: 'ComponentBlocksShowOffBanner' }
-          | { __typename: 'ComponentBlocksStartBanner' }
-          | {
-              __typename: 'ComponentCommonPromoBanner'
-              title?: string | null
-              description?: string | null
-              image?: {
-                __typename?: 'UploadFileEntityResponse'
-                data?: {
-                  __typename?: 'UploadFileEntity'
-                  attributes?: {
-                    __typename?: 'UploadFile'
-                    url: string
-                    alternativeText?: string | null
-                    width?: number | null
-                    height?: number | null
-                  } | null
-                } | null
-              } | null
-              button?: {
-                __typename?: 'ComponentCommonButton'
-                label?: string | null
-                href?: string | null
-                type?: Enum_Componentcommonbutton_Type | null
-              } | null
-            }
-          | { __typename: 'ComponentCommonTitleBlock' }
-          | { __typename: 'Error' }
-          | null
-        > | null
-      } | null
-    }>
   } | null
 }
 
@@ -2826,6 +2407,56 @@ export type GetPageContentQuery = {
             }
           | { __typename: 'ComponentCommonTitleBlock'; title?: string | null }
           | { __typename: 'Error' }
+          | null
+        > | null
+      } | null
+    }>
+  } | null
+}
+
+export type GetPrivacyPolicyContentQueryVariables = Exact<{
+  path?: InputMaybe<Scalars['String']>
+}>
+
+export type GetPrivacyPolicyContentQuery = {
+  __typename?: 'Query'
+  pages?: {
+    __typename?: 'PageEntityResponseCollection'
+    data: Array<{
+      __typename?: 'PageEntity'
+      attributes?: {
+        __typename?: 'Page'
+        pageTitle?: { __typename?: 'ComponentCommonTitleBlock'; title?: string | null } | null
+        blocks?: Array<
+          | { __typename?: 'ComponentBlocksAboutBanner' }
+          | { __typename?: 'ComponentBlocksAboutProjectBanner' }
+          | { __typename?: 'ComponentBlocksBlogBanner' }
+          | { __typename?: 'ComponentBlocksClientBanner' }
+          | { __typename?: 'ComponentBlocksComponentsTableBanner' }
+          | { __typename?: 'ComponentBlocksContactUsInfo' }
+          | { __typename?: 'ComponentBlocksCrossPlatformBanner' }
+          | { __typename?: 'ComponentBlocksFactsBanner' }
+          | { __typename?: 'ComponentBlocksFeaturedBanner' }
+          | { __typename?: 'ComponentBlocksHeadingBanner' }
+          | { __typename?: 'ComponentBlocksImageDescBanner' }
+          | { __typename?: 'ComponentBlocksInfoBanner' }
+          | { __typename?: 'ComponentBlocksIntegrationBanner' }
+          | { __typename?: 'ComponentBlocksModelsBanner' }
+          | { __typename?: 'ComponentBlocksOnBoardingChooseBanner' }
+          | { __typename?: 'ComponentBlocksOnBoardingCreateStoreBanner' }
+          | { __typename?: 'ComponentBlocksOnBoardingFeaturesBanner' }
+          | { __typename?: 'ComponentBlocksOnBoardingPromoBanner' }
+          | { __typename?: 'ComponentBlocksOnBoardingQaBanner' }
+          | { __typename?: 'ComponentBlocksProjectsBanner' }
+          | { __typename?: 'ComponentBlocksPromoBanner' }
+          | { __typename?: 'ComponentBlocksReviewsBanner' }
+          | { __typename?: 'ComponentBlocksRichTextBanner'; text?: string | null }
+          | { __typename?: 'ComponentBlocksServicesBanner' }
+          | { __typename?: 'ComponentBlocksShowOffBanner' }
+          | { __typename?: 'ComponentBlocksStartBanner' }
+          | { __typename?: 'ComponentCommonPromoBanner' }
+          | { __typename?: 'ComponentCommonTitleBlock' }
+          | { __typename?: 'Error' }
           | null
         > | null
       } | null
