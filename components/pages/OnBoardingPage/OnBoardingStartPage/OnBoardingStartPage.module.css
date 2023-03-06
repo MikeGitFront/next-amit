@@ -1,5 +1,5 @@
 .input {
-  @apply h-10 border border-text-primary w-full max-w-full py-[calc(0.375rem-1px)] px-[calc(0.625rem-1px)] relative;
+  @apply h-10 border border-text-primary w-full max-w-full py-[calc(0.375rem-1px)] px-[calc(0.625rem-1px)] relative bg-white;
 }
 
 .formWrapper {
