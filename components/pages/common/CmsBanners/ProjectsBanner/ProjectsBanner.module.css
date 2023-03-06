@@ -1,5 +1,5 @@
 .projects {
-  @apply grid grid-cols-2 grid-rows-2 md:flex gap-4 my-10 relative;
+  @apply grid grid-cols-2 grid-rows-2 md:flex gap-4 my-10 relative z-[2];
 }
 
 .mainDescription {
@@ -24,7 +24,7 @@
   position: absolute;
   transform: translate(-50%) translateY(50%);
   left: 50%;
-  z-index: -1;
+  z-index: -5;
   width: 100vw;
   height: 100%;
   background-size: cover;
@@ -32,7 +32,7 @@
 }
 
 .blog {
-  @apply flex relative pb-10;
+  @apply flex relative pb-10 z-[2];
 }
 
 .blog::before {
@@ -40,7 +40,7 @@
   position: absolute;
   transform: translate(-50%);
   left: 50%;
-  z-index: -1;
+  z-index: -5;
   width: 100vw;
   height: 100%;
   background-size: cover;

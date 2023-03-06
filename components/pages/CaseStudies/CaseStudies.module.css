@@ -3,7 +3,7 @@
   position: absolute;
   transform: translate(-50%) translateY(-70%);
   left: 50%;
-  z-index: -1;
+  z-index: 1;
   width: 100%;
   height: calc(45% + 4rem);
   background-size: cover;

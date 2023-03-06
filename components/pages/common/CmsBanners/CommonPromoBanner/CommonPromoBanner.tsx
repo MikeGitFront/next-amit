@@ -25,7 +25,7 @@ export const CommonPromoBanner: React.FC<CommonPromoBannerProps> = ({ data }) =>
             height={image?.height}
           />
         </div>
-        <div className="flex flex-col items-center min-h-[15rem] pt-8 px-6 gap-4 pb-8 md:pb-0 text-center">
+        <div className="flex flex-col relative items-center min-h-[15rem] pt-8 px-6 gap-4 pb-8 md:pb-0 text-center z-[2]">
           <div className="font-bold font-secondary text-text-primary text-[2.8rem]">{title}</div>
           <div className="text-heading text-center">
             <ReactMarkdown rehypePlugins={[rehypeRaw]}>{description}</ReactMarkdown>

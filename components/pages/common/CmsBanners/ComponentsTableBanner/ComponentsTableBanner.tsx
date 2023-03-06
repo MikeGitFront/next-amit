@@ -75,12 +75,12 @@ export const ComponentsTableBanner: React.FC<ComponentsTableBannerProps> = ({ da
                   className="border border-[#e5e7eb] w-full min-h-[3.75rem] shadow-[0_0_20px_rgba(0,0,0,.05)] flex text-2xl text-text-primary justify-between items-center cursor-pointer relative"
                 >
                   <div
-                    className={`absolute bg-bg-gray-5 left-0 top-0 h-full transition-all duration-700 -z-10 ${
+                    className={`absolute bg-bg-gray-5 left-0 top-0 h-full transition-all duration-700 z-[1] ${
                       isActive ? 'w-full' : 'w-[19%]'
                     } `}
                   ></div>
-                  <div className="ml-4 max-w-[75%] sm:ml-6 text-xl font-bold">{name}</div>
-                  <div className="w-12">
+                  <div className="ml-4 sm:ml-6 text-xl font-bold z-[2]">{name}</div>
+                  <div className="w-12 z-[2]">
                     <Image
                       src={ArrowDown}
                       className={` ${isActive ? 'rotate-180' : ''}`}

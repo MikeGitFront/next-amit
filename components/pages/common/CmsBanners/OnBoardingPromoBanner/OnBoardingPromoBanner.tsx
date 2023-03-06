@@ -24,7 +24,7 @@ export const OnBoardingPromoBanner: React.FC<OnBoardingPromoBannerProps> = ({ da
         </div>
         <div className="md:w-[50%] mt-16 md:mt-0 relative flex flex-col items-center justify-center">
           <Image
-            className="static -z-10"
+            className="static z-[2]"
             src={mainImage?.url || ''}
             alt={mainImage?.alternativeText || ''}
             width={mainImage?.width}
@@ -41,7 +41,7 @@ export const OnBoardingPromoBanner: React.FC<OnBoardingPromoBannerProps> = ({ da
             return (
               <Image
                 key={index}
-                className="absolute"
+                className="absolute z-[3]"
                 src={image?.url || ''}
                 alt={image?.alternativeText || ''}
                 width={image?.width}

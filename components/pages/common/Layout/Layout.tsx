@@ -53,13 +53,13 @@ export const Layout: React.FC<LayoutProps> = ({ children, header, footer }) => {
         onClick={() => setIsMobileMenuOpen(false)}
         className={`${
           isMobileMenuOpen ? 'fixed block' : 'hidden'
-        } top-0 left-0 w-full h-full appearance-none z-[11] cursor-pointer bg-[rgba(0,0,0,.5)]`}
+        } top-0 left-0 w-full h-full appearance-none z-[101] cursor-pointer bg-[rgba(0,0,0,.5)]`}
       ></button>
       <aside
         ref={asideRef}
         className={`${
           isMobileMenuOpen ? 'grid' : 'hidden'
-        } fixed bg-white bottom-0 z-[12] top-0 left-0 grid-rows-[auto_1fr_auto] max-w-[20rem] w-full`}
+        } fixed bg-white bottom-0 z-[102] top-0 left-0 grid-rows-[auto_1fr_auto] max-w-[20rem] w-full`}
       >
         <div className="row-span-1 flex justify-between items-center mx-4 h-[4rem]">
           <Link className="mx-auto" href="/">

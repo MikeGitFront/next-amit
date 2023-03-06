@@ -8,6 +8,7 @@
 
 .content {
   overflow: hidden;
+  @apply bg-white text-text-primary;
 }
 
 @media (min-height: 640px) {

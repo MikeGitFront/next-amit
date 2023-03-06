@@ -12,7 +12,7 @@ type BlogBannerProps = {
 export const BlogBanner: React.FC<BlogBannerProps> = ({ data }) => {
   const { items } = data
   return (
-    <Container>
+    <Container className='relative z-[2]'>
       <div className="flex flex-col justify-center md:flex-row md:justify-evenly mb-12 gap-8">
         {items.map(({ description, image, link, title }, index) => (
           <div

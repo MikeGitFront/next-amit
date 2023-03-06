@@ -14,7 +14,7 @@ export const ModelsBanner: React.FC<ModelsBannerProps> = ({ data }) => {
     <Container>
       <div className="flex flex-col md:flex-row md:px-8 py-4">
         <div className="md:w-[50%]">
-          <div className="text-4xl md:text-[2.8rem] font-secondary font-bold max-w-[500px]">{title}</div>
+          <div className="text-4xl md:text-[2.8rem] font-secondary font-bold max-w-[500px] mb-4 md:mb-8">{title}</div>
           <div className="text-heading max-w-[500px]">{description}</div>
         </div>
         <div className="md:w-[50%] my-8 relative flex flex-wrap gap-4">
