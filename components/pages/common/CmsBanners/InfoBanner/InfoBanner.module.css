@@ -29,7 +29,7 @@
     height: 31rem;
   }
   .animatedFirst {
-    @apply w-auto h-auto absolute -z-10;
+    @apply w-auto h-auto absolute z-[1];
     animation: 1s linear forwards imageRight;
   }
 
@@ -46,7 +46,7 @@
   }
 
   .animatedSecond {
-    @apply w-auto h-auto absolute -z-10;
+    @apply w-auto h-auto absolute z-[1];
     animation: 1s linear 1s forwards imageLeft;
   }
 
@@ -63,7 +63,7 @@
   }
 
   .animatedThird {
-    @apply w-auto h-auto absolute -z-10;
+    @apply w-auto h-auto absolute z-[1];
     animation: 1s linear 2s forwards imageBotLeft;
   }
 
@@ -81,7 +81,7 @@
   }
 
   .animatedFourth {
-    @apply w-auto h-auto absolute -z-10;
+    @apply w-auto h-auto absolute z-[1];
     animation: 1s linear 3s forwards imageBotRight;
   }
 

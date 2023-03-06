@@ -25,6 +25,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({ data }) => {
         </div>
         <div className={s.images}>
           <Image
+            className='z-[2]'
             src={mainImage?.url || ''}
             alt={mainImage?.alternativeText || ''}
             width={mainImage?.width}
